@@ -1,4 +1,4 @@
-# anniepotatoes.me
+# stphluo
 
 A sleek, responsive personal portfolio site built with **React**, **TypeScript**, and **Tailwind CSS**. This site showcases my full-stack engineering work (`Compiled`), creative coding and design projects (`Created`), and original photography (`Captured`). It features dark/light mode, smooth page transitions, and a mobile-optimized slide-out navigation menu.
 
@@ -37,8 +37,8 @@ src/
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/fillersury/anniepotatoes.git
-   cd anniepotatoes
+   git clone https://github.com/fillersury/stphluo.git
+   cd stphluo
    ```
 
 2. **Install dependencies**

@@ -1,122 +1,108 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import useDarkMode from "../hooks/useDarkMode";
-import { FaSun, FaMoon } from "react-icons/fa";
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Nav } from 'react-bootstrap';
 
-function NavigationBar() {
-  const { pathname } = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const { theme, toggleTheme } = useDarkMode();
+interface NavigationItem {
+  name: string;
+  path: string;
+}
 
-  const linkClass = (path: string) =>
-    `block px-4 py-2 text-lg font-bold transition-colors duration-200 ${
-      pathname === path
-        ? "text-cyan-900 dark:text-cyan-400 border-b-2 border-cyan-900 dark:border-cyan-400"
-        : "hover:text-cyan-900 text-gray-500 dark:text-gray-500 dark:hover:text-cyan-500"
-    }`;
+interface NavigationBarProps {
+  currentPage: string;
+  onNavigate: (path: string) => void;
+}
 
-  // Close menu on outside click
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
-        setMobileMenuOpen(false);
-      }
-    };
+const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    if (mobileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+  const navigationItems: NavigationItem[] = [
+    { name: 'Portfolio', path: 'portfolio' },
+    { name: 'About Me', path: 'about' },
+    { name: 'Resume', path: 'resume' },
+  ];
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [mobileMenuOpen]);
+  const handleNavigation = (path: string): void => {
+    onNavigate(path);
+    setIsMenuOpen(false);
+  };
+
+  const getBackgroundClass = (page: string) => {
+  switch (page) {
+    case 'portfolio':
+      return 'bg-stone-100';
+    case 'projects/state-farm':
+      return 'bg-orange-50';
+    case 'resume':
+      return 'bg-blue-100';
+    default:
+      return 'bg-white';
+  }
+};
 
   return (
-    <nav className="bg-slate-200 dark:bg-slate-950 shadow sticky top-0 z-50">
-      <div className="max-w-7x1 mx-auto px-4 flex justify-between items-center h-16">
-        <Link
-          to="/"
-          className="text-xl font-bold font-mono text-cyan-900 dark:text-cyan-400 hover:text-indigo-800 transition-colors"
-        >
-          anniepotatoes
-        </Link>
-
-        {/* Hamburger button */}
-        <button
-          className="inline-flex items-center justify-center p-2 rounded-md text-cyan-700 hover:text-indigo-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-          aria-expanded={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className="sr-only">Open main menu</span>
-          {!mobileMenuOpen ? (
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Slide-out menu */}
-      <div
-        ref={menuRef}
-        className={`fixed top-0 right-0 h-full w-64 bg-slate-200 dark:bg-slate-950 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md shadow-lg z-50 transform transition-transform duration-300 ease-in-out
-          ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}
-          flex flex-col`}
-      >
-        <div className="mt-16 flex flex-col space-y-2 px-6 font-mono uppercase tracking-wide text-lg">
-          <Link to="/" className={linkClass("/")} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/compiled" className={linkClass("/compiled")} onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link to="/created" className={linkClass("/created")} onClick={() => setMobileMenuOpen(false)}>Created</Link>
-          <Link to="/captured" className={linkClass("/captured")} onClick={() => setMobileMenuOpen(false)}>Captured</Link>
-          <Link to="/contact" className={linkClass("/contact")} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-        </div>
-
-        {/* Push to bottom */}
-        <div className="mt-auto px-6 pb-6 flex justify-end">
-          <button
-            onClick={toggleTheme}
-            className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300
-                        ${theme === "dark" ? "bg-cyan-800" : "bg-slate-400"}`}
-            aria-label="Toggle dark mode"
-          >
-            <div
-              className={`w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300 flex items-center justify-center
-                          ${theme === "dark" ? "translate-x-6" : "translate-x-0"}`}
-            >
-              {theme === "dark" ? (
-                <FaMoon className="text-indigo-800 text-sm" />
-              ) : (
-                <FaSun className="text-yellow-500 text-sm" />
-              )}
+    <nav className={`${getBackgroundClass(currentPage)} top-0 z-50`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-24">
+          {/* Desktop Menu */}
+          <div className="hidden md:block ml-auto">
+            <div className="flex items-baseline space-x-28">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.path}
+                  onClick={() => handleNavigation(item.path)}
+                  className={`px-3 py-2 text-base font-sans font-normal transition-colors duration-200
+                    ${
+                      currentPage === item.path
+                      ? "text-red-300"
+                      : "text-black hover:text-gray-400"
+                    }`
+                  }
+                >
+                  {item.name}
+                </button>
+              ))}
             </div>
-          </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            {navigationItems.map((item) => (
+              <button
+                key={item.path}
+                onClick={() => handleNavigation(item.path)}
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  currentPage === item.path
+                    ? 'text-indigo-600 bg-indigo-50'
+                    : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
+                }`}
+                style={currentPage === item.path ? { color: '#4f46e5' } : { color: '#374151' }}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
-}
+};
 
 export default NavigationBar;
