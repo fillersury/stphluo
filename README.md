@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# stphluo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sleek, responsive personal portfolio site built with **React**, **TypeScript**, and **Tailwind CSS**. This site showcases my full-stack engineering work (`Compiled`), creative coding and design projects (`Created`), and original photography (`Captured`). It features dark/light mode, smooth page transitions, and a mobile-optimized slide-out navigation menu.
 
-## Available Scripts
+![Screenshot](./src/assets/screenshot-homepage.jpg)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dark / Light Mode** toggle with animated slider and emoji indicators  
+- **Tailwind CSS** styling for modern layout and responsiveness  
+- **Sticky navigation bar** with mobile slide-out menu  
+- **Image gallery** with optimized loading and responsive aspect ratios  
+- **Smooth transitions** between routes with fade-in/fade-out animation  
+- Fully responsive design for all screen sizes  
+- GitHub integration and project links  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── assets/            # All static images and assets
+├── components/        # Shared UI components (e.g. NavigationBar)
+├── hooks/             # Custom React hooks (e.g. useDarkMode)
+├── pages/             # Route-based pages: Home, Compiled, Created, Captured
+├── App.tsx            # Main app component
+├── main.tsx           # Entry point
+└── index.css          # Tailwind + global styles
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/fillersury/stphluo.git
+   cd stphluo
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🌍 Live Demo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> Deployed at: [https://anniepotatoes.me](https://anniepotatoes.me)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [Heroicons / React Icons](https://react-icons.github.io/react-icons/)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📸 Credits
 
-### Analyzing the Bundle Size
+All images on the site were taken and edited by me.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## About Me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I'm a full-stack engineer based in NYC with 4+ years of experience building modern web applications in React and .NET Core. I love clean code, elegant design, and visual storytelling.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
+📫 [annieluo.gobucks@gmail.com](mailto:annieluo.gobucks@gmail.com)
+📸 [instagram.com/anniepotatoes](https://instagram.com/anniepotatoes)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT — [see LICENSE](LICENSE)
