@@ -13,7 +13,7 @@ import casestudies from "../assets/casestudies.avif";
 
 function Portfolio() {
   const navigate = useNavigate();
-  const typed = useTypedText(["product", "app", "web", "industrial"], 150, 1000);
+  const typed = useTypedText(["a product", "an app", "a web", "an industrial"], 150, 1000);
 
   return (
     <div>
@@ -21,7 +21,7 @@ function Portfolio() {
         <div className="grid grid-cols-1 gap-4">
           <div className="p-16 sm:p-20">
             <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
-              Hi! I'm Stephanie,<br /> and I'm a{" "}
+              Hi! I'm Stephanie,<br /> and I'm{" "}
               <span className="text-red-300 font-bold">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}designer.
             </h1>
           </div>
