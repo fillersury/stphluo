@@ -7,7 +7,7 @@ function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-16 py-10 md:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-        <div className="col-span-1 lg:col-span-2 flex items-center justify-end">
+        <div className="col-span-1 lg:col-span-2 flex items-center justify-center lg:justify-end">
           <img
             src={profilePic}
           />
