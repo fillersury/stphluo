@@ -19,20 +19,21 @@ const WorkShowcase: React.FC<WorkShowcaseProps> = ({
 }) => {
   return (
     <section className="max-w-5xl mx-auto">
-      <div className="grid grid-cols-2">
-        <div className="flex justify-end p-16">
-          <img className="rounded-2xl transition-transform duration-300 ease-in-out hover:scale-105"
+      <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="flex justify-start sm:justify-end p-10 sm:p-16">
+          <img
+            className="rounded-2xl transition-transform duration-300 ease-in-out hover:scale-105 max-w-full h-auto object-contain"
             src={image}
             alt={title} />
         </div>
-        <div className="flex flex-col justify-end p-16">
+        <div className="flex flex-col justify-end p-10 pt-0 sm:p-16">
           <h3 className="text-base font-sans text-gray-600 font-medium mb-1">
             {category}
           </h3>
-          <h3 className="text-3xl font-sans text-gray-600 font-semibold mb-8">
+          <h3 className="text-3xl font-sans text-gray-600 font-semibold mb-5 sm:mb-8">
             {title}
           </h3>
-          <p className="text-lg font-sans text-gray-600 font-normal">
+          <p className="text-normal sm:text-lg font-sans text-gray-600 font-normal">
             {description}
           </p>
           {onButtonClick && (
