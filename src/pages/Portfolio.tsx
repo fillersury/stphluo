@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useTypedText } from "../hooks/useTypedText";
 import WorkShowcase from "../components/WorkShowcase";
 
 import stateFarm from "../assets/stateFarm.avif";
@@ -13,6 +13,7 @@ import casestudies from "../assets/casestudies.avif";
 
 function Portfolio() {
   const navigate = useNavigate();
+  const typed = useTypedText(["product", "app", "web", "industrial"], 150, 1000);
 
   return (
     <div>
@@ -20,11 +21,9 @@ function Portfolio() {
         <div className="grid grid-cols-1 gap-4">
           <div className="p-16 sm:p-20">
             <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
-              Hi! I'm Stephanie.
+              Hi! I'm Stephanie,<br /> and I'm a{" "}
+              <span className="text-red-300 font-bold">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}designer.
             </h1>
-            <p className="text-base sm:text-xl font-sans text-gray-600 font-light text-center">
-              Product designer, UI/UX and design systems expert based out of New York City
-            </p>
           </div>
         </div>
       </section>
