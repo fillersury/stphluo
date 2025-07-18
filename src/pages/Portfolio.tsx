@@ -18,11 +18,11 @@ function Portfolio() {
     <div>
       <section className="bg-stone-100">
         <div className="grid grid-cols-1 gap-4">
-          <div className="p-20">
-            <h1 className="text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
+          <div className="p-10 sm:p-20">
+            <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
               Hi! I'm Stephanie.
             </h1>
-            <p className="text-xl font-sans text-gray-600 font-light text-center">
+            <p className="text-base sm:text-xl font-sans text-gray-600 font-light text-center">
               Product designer, UI/UX and design systems expert based out of New York City
             </p>
           </div>
