@@ -1,6 +1,6 @@
 # stphluo
 
-A sleek, responsive personal portfolio site built with **React**, **TypeScript**, and **Tailwind CSS**. This site showcases my full-stack engineering work (`Compiled`), creative coding and design projects (`Created`), and original photography (`Captured`). It features dark/light mode, smooth page transitions, and a mobile-optimized slide-out navigation menu.
+This is a modern, responsive portfolio site built with React, TypeScript, and Tailwind CSS to showcase Stephanie Luo’s UI/UX design work. The site emphasizes clean aesthetics, intuitive layout, and seamless responsiveness across devices. Every component is hand-crafted to reflect a high standard of front-end engineering, highlighting my ability to build elegant, performant user interfaces with a focus on scalability and maintainability.
 
 ![Screenshot](./src/assets/screenshot-homepage.jpg)
 
@@ -8,10 +8,7 @@ A sleek, responsive personal portfolio site built with **React**, **TypeScript**
 
 ## Features
 
-- **Dark / Light Mode** toggle with animated slider and emoji indicators  
 - **Tailwind CSS** styling for modern layout and responsiveness  
-- **Sticky navigation bar** with mobile slide-out menu  
-- **Image gallery** with optimized loading and responsive aspect ratios  
 - **Smooth transitions** between routes with fade-in/fade-out animation  
 - Fully responsive design for all screen sizes  
 - GitHub integration and project links  
@@ -60,7 +57,7 @@ src/
 
 ## 🌍 Live Demo
 
-> Deployed at: [https://anniepotatoes.me](https://anniepotatoes.me)
+> Dev Environment deployed at: [https://dev.d1551o48mzn3d7.amplifyapp.com](https://dev.d1551o48mzn3d7.amplifyapp.com)
 
 ---
 
@@ -77,7 +74,7 @@ src/
 
 ## 📸 Credits
 
-All images on the site were taken and edited by me.
+All images are stock images.
 
 ---
 
