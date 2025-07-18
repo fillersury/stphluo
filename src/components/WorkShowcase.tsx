@@ -33,7 +33,7 @@ const WorkShowcase: React.FC<WorkShowcaseProps> = ({
           <h3 className="text-3xl font-sans text-gray-600 font-semibold mb-5 sm:mb-8">
             {title}
           </h3>
-          <p className="text-normal sm:text-lg font-sans text-gray-600 font-normal">
+          <p className="text-base sm:text-lg font-sans text-gray-600 font-normal">
             {description}
           </p>
           {onButtonClick && (

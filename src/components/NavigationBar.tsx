@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Nav } from 'react-bootstrap';
 
@@ -27,17 +27,25 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
   };
 
   const getBackgroundClass = (page: string) => {
-  switch (page) {
-    case 'portfolio':
-      return 'bg-stone-100';
-    case 'projects/state-farm':
-      return 'bg-orange-50';
-    case 'resume':
-      return 'bg-blue-100';
-    default:
-      return 'bg-white';
-  }
-};
+    switch (page) {
+      case 'portfolio':
+        return 'bg-stone-100';
+      case 'projects/state-farm':
+        return 'bg-orange-50';
+      case 'resume':
+        return 'bg-blue-100';
+      default:
+        return 'bg-white';
+    }
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMenuOpen]);
 
   return (
     <nav className={`${getBackgroundClass(currentPage)} top-0 z-50`}>
@@ -81,26 +89,45 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-            {navigationItems.map((item) => (
-              <button
-                key={item.path}
-                onClick={() => handleNavigation(item.path)}
-                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                  currentPage === item.path
-                    ? 'text-indigo-600 bg-indigo-50'
-                    : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
-                }`}
-                style={currentPage === item.path ? { color: '#4f46e5' } : { color: '#374151' }}
-              >
-                {item.name}
-              </button>
-            ))}
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      {/* Slide-out panel */}
+      <div
+        className={`fixed right-0 top-0 h-full w-3/4 max-w-xs bg-white z-50 shadow-lg transform transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="p-6 flex flex-col space-y-6 h-full">
+          <div className="flex justify-end">
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-700 hover:text-sky-600"
+            >
+              <X className="h-6 w-6" />
+            </button>
           </div>
+
+          {navigationItems.map((item) => (
+            <button
+              key={item.path}
+              onClick={() => handleNavigation(item.path)}
+              className={`text-lg font-medium text-left transition-colors duration-200 ${
+                currentPage === item.path
+                  ? 'text-sky-600'
+                  : 'text-gray-700 hover:text-sky-600'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };

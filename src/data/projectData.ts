@@ -254,8 +254,8 @@ const projectData: Record<string, Project> = {
             "Not only does it create a standard of inclusivity for those with visual impairments, it improves the overall user experience for all customers as well."
           ],
           image: geicoBS,
-          leftColSpan: 6,
-          rightColSpan: 4
+          leftColSpan: 3,
+          rightColSpan: 2
         },
       },
       {

@@ -22,7 +22,7 @@ function Portfolio() {
             <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
               Hi! I'm Stephanie.
             </h1>
-            <p className="text-normal sm:text-xl font-sans text-gray-600 font-light text-center">
+            <p className="text-base sm:text-xl font-sans text-gray-600 font-light text-center">
               Product designer, UI/UX and design systems expert based out of New York City
             </p>
           </div>
