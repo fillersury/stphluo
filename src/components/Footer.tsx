@@ -1,5 +1,5 @@
 import React from "react";
-import linkedInLogo from "../assets/linkedInLogo.avif";
+import linkedInLogo from "../assets/linkedinLogo.avif";
 
 function Footer() {
   return (
