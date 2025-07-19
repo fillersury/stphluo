@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTypedText } from "../hooks/useTypedText";
+
 import WorkShowcase from "../components/WorkShowcase";
 
 import stateFarm from "../assets/stateFarm.avif";
@@ -11,8 +12,11 @@ import obsidian from "../assets/obsidian.avif";
 import myeyedr from "../assets/myeyedr.avif";
 import casestudies from "../assets/casestudies.avif";
 
-function Portfolio() {
-  const navigate = useNavigate();
+interface PortfolioProps {
+  onNavigate: (path: string) => void;
+}
+
+function Portfolio({ onNavigate }: PortfolioProps) {
   const typed = useTypedText(["a product", "an app", "a web", "an industrial"], 150, 1000);
 
   return (
@@ -33,7 +37,7 @@ function Portfolio() {
           category="Mobile UI, Design Systems"
           title="State Farm"
           description="Created mobile experiences for SFMA (State Farm Mobile App) claims, billing and payments, documents center, and built components for the mobile design system."
-          onButtonClick={() => navigate("/projects/state-farm")}
+          onButtonClick={() => onNavigate("projects/state-farm")}
         />
       </section>
       <section className="bg-stone-100">
@@ -42,7 +46,7 @@ function Portfolio() {
           category="Design Systems, Internal-facing UI, User Research"
           title="Gap Inc"
           description="Created and maintained the Gap Inc Design System, and designed internal franchise modules for Gap order management and fulfillment."
-          onButtonClick={() => window.location.href = "/projects/gap"}
+          onButtonClick={() => onNavigate("projects/gap")}
         />
       </section>
       <section>
@@ -51,7 +55,7 @@ function Portfolio() {
           category="Design Systems, Web and Mobile UI/UX"
           title="GEICO"
           description="Ensured the cohesiveness of the GEICO design system delivery process. Designed internal applications to support top priority insurance initiatives to stay competitive in the industry."
-          onButtonClick={() => window.location.href = "/projects/geico"}
+          onButtonClick={() => onNavigate("projects/geico")}
         />
       </section>
       <section className="bg-stone-100">
@@ -60,7 +64,7 @@ function Portfolio() {
           category="UX Research"
           title="Coca-Cola, Honest Tea"
           description="Conducted user experience (UX) research and strategizing for the Honest Tea division of Coca-Cola. I designed moderated usability studies and created testing prototypes."
-          onButtonClick={() => window.location.href = "/state-farm-case-study"}
+          onButtonClick={() => onNavigate("/state-farm-case-study")}
         />
       </section>
       <section>
@@ -69,7 +73,7 @@ function Portfolio() {
           category="Mobile and Web UI, Design Systems"
           title="Obsidian Global"
           description="Designed and built new user-facing pages by creating UI/UX wireframes, and utilizing HTML, CSS and Javascript on the front-end to customize web pages."
-          onButtonClick={() => window.location.href = "/projects/obsidian"}
+          onButtonClick={() => onNavigate("projects/obsidian")}
         />
       </section>
       <section className="bg-stone-100">
@@ -78,7 +82,7 @@ function Portfolio() {
           category="UX Research"
           title="MyEyedr"
           description="As a UX researcher, I conducted thorough UX research proposals on customer experience. I hosted UX workshops, and conducted research presentations."
-          onButtonClick={() => window.location.href = "/projects/myeyedr"}
+          onButtonClick={() => onNavigate("projects/myeyedr")}
         />
       </section>
       <section>
@@ -87,7 +91,7 @@ function Portfolio() {
           category="UI/UX Design"
           title="Case Studies"
           description="Showcasing my passion for user experience design in independent projects has allowed me to further my learning in the field of UI/UX. This compilation of projects include contracting to small-businesses in my community, as well as personal case studies."
-          onButtonClick={() => window.location.href = "/state-farm-case-study"}
+          onButtonClick={() => onNavigate("/state-farm-case-study")}
         />
       </section>
     </div>
