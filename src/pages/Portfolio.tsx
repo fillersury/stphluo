@@ -91,7 +91,7 @@ function Portfolio({ onNavigate }: PortfolioProps) {
           category="UI/UX Design"
           title="Case Studies"
           description="Showcasing my passion for user experience design in independent projects has allowed me to further my learning in the field of UI/UX. This compilation of projects include contracting to small-businesses in my community, as well as personal case studies."
-          onButtonClick={() => onNavigate("/state-farm-case-study")}
+          onButtonClick={() => onNavigate("projects/case-studies")}
         />
       </section>
     </div>
