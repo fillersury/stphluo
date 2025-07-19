@@ -14,7 +14,7 @@ function Resume() {
                 href={resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs sm:text-sm lg:text-base bg-red-300 px-4 sm:px-8 lg:px-12 py-2 rounded-xl inline-block text-center"
+                className="text-xs sm:text-sm lg:text-base bg-red-300 hover:bg-red-200 px-4 sm:px-8 lg:px-12 py-2 rounded-xl inline-block text-center"
               >
                 Download pdf
               </a>
@@ -37,7 +37,7 @@ function Resume() {
                 href={resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-300 px-12 py-2 rounded-xl inline-block text-center"
+                className="bg-red-300 hover:bg-red-200 px-12 py-2 rounded-xl inline-block text-center"
               >
                 Download pdf
               </a>
