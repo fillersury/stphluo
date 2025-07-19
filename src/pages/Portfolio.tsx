@@ -22,7 +22,7 @@ function Portfolio() {
           <div className="p-16 sm:p-20">
             <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
               Hi! I'm Stephanie,<br /> and I'm{" "}
-              <span className="text-red-300 font-bold">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}designer.
+              <span className="text-red-300 ">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}<span className="text-red-300">designer</span>.
             </h1>
           </div>
         </div>
