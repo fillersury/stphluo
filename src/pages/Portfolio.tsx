@@ -64,7 +64,7 @@ function Portfolio({ onNavigate }: PortfolioProps) {
           category="UX Research"
           title="Coca-Cola, Honest Tea"
           description="Conducted user experience (UX) research and strategizing for the Honest Tea division of Coca-Cola. I designed moderated usability studies and created testing prototypes."
-          onButtonClick={() => onNavigate("/state-farm-case-study")}
+          onButtonClick={() => onNavigate("projects/coke-honest-tea")}
         />
       </section>
       <section>

@@ -22,6 +22,13 @@ import geicoBS from "../assets/geicoBS.avif";
 import geicoComponents from "../assets/geicoComponents.gif";
 import geicoComponents2 from "../assets/geicoComponents2.avif";
 
+import honestLogo from "../assets/honestLogo.png";
+import cokeLogo from "../assets/cokeLogo.png";
+import honestWebsite from "../assets/honestWebsite.png";
+import honestUserInterviews from "../assets/honestUserInterviews.avif";
+import honestPersonaDev from "../assets/honestPersonaDev.avif";
+import honestAffinityDiagram from "../assets/honestAffinityDiagram.avif";
+
 import obsidian from "../assets/obsidian.avif";
 import obsidian2 from "../assets/obsidian2.avif";
 
@@ -40,7 +47,8 @@ export type SectionType =
   | "simpleTextImageOverlaySection"
   | "multipleImageFullSection"
   | "complexLeftTextImageListSection"
-  | "workShowcase";
+  | "workShowcase"
+  | "simpleListSection";
 
 export interface SectionData {
   type: SectionType;
@@ -139,7 +147,7 @@ const projectData: Record<string, Project> = {
             "Franchise Design System (Web UI)",
             "Franchise Internal Modules",
           ],
-          tools: "Figma, Figjam, Mural, Jira, Confluence, Sharepoint",
+          tools: [ "Figma, Figjam, Mural, Jira, Confluence, Sharepoint" ],
         },
       },
       {
@@ -289,6 +297,95 @@ const projectData: Record<string, Project> = {
             "All of our experiences are available in dark mode-high contrast mode, which is documented in Figma and our live design system website."
           ],
           image: geicoComponents2
+        }
+      },
+    ]
+  },
+  "coke-honest-tea": {
+    sections: [
+      {
+        type: "multipleLogosTitleSection",
+        data: {
+          logos: [honestLogo, cokeLogo],
+          title: "Honest | Coca-Cola",
+          cardColor: "bg-green-100",
+          title_bg_color: "",
+          textColor: "text-black",
+          timeline_dates: "Mar 2019 - Dec 2019",
+          timeline_text:
+            "All proofs of concept, prototypes and designs were created for use by Honest Tea, a subsidiary of Coca-Cola.",
+          role_text:
+            "As a UX Researcher (Contract), I worked with a team of designers, product managers, and developers to create and maintain the Honest Tea website, acquired by Coca-Cola.",
+          projects: [
+            "Franchise Design System (Web UI)",
+            "Franchise Internal Modules",
+          ],
+          tools: [
+            "Sketch, Adobe Creative Suite: Indesign, Illustrator, Photoshop",
+            "User Research and Strategy, Moderated Usability Tests, User Interviews, Research Analysis"
+          ],
+        },
+      },
+      {
+        type: "simpleLeftTextSection",
+        data: {
+          textColor: "text-green-300",
+          header: "The Challenge",
+          paragraphs: [
+            "To meet Honest Tea's digital strategy goals, we aimed to create a more user-centered design approach by using qualitative and quantitative research methods.",
+          ],
+          image: honestWebsite,
+        },
+      },
+      {
+        type: "simpleRightTextSection",
+        data: {
+          textColor: "text-green-300",
+          header: "User Interviews",
+          paragraphs: [
+            "We selected a diverse group of individuals that varied in their age, familiarity with honest tea, and affinity for similar products (organic produce, tea, sweet beverages).",
+            "In-Person Moderation: Interviews were conducted in the Walter E Washington Conference Center."
+          ],
+          image: honestUserInterviews,
+        },
+      },
+      {
+        type: "simpleLeftTextSection",
+        data: {
+          textColor: "text-green-300",
+          header: "Persona Development",
+          paragraphs: [
+            "I developed user personas for Honest Tea based on more than 15 user interviews and communicated thesevia infographics at team meetings. This communication fostered a shared understanding of users among all stakeholders.",
+          ],
+          image: honestPersonaDev,
+        },
+      },
+      {
+        type: "simpleRightTextSection",
+        data: {
+          textColor: "text-green-300",
+          header: "Affinity Diagramming",
+          paragraphs: [
+            "To navigating through collected data, created affinity groups I see affinity diagramming as akin to uncovering descriptive statistics, such as averages, but for qualitative data. This approach allows me to extract themes from the research without the need to hard-code qualitative responses, saving time—particularly since it's not as common a practice in industry as it is in academia."
+          ],
+          image: honestAffinityDiagram,
+        },
+      },
+      {
+        type: "simpleListSection",
+        data: {
+          textColor: "text-green-300",
+          header: "Key Takeaways",
+          listItemTitles: [
+            "Focus on consistency",
+            "Follow industry standards",
+            "Reinforce core mission"
+          ],
+          listItems: [
+            "Consistency in on the Honest Tea website is the key to an intuitive, user-friendly experience. From color schemes to navigation menus, maintaining a consistent design language ensures effortless navigation and engagement. Consistency builds trust along the user journey, contributing to a positive brand perception.",
+            "Identifying accessibility as a pain point across multiple pages, the team found an important area of improvement. Accessibility is a core design principle that fosters inclusivity for all users. By embracing accessible design, Honest Tea can cater to a diverse audience, including those with various abilities. It reflects social responsibility and ethical design, which aligns with HT's core mission.",
+            "As Honest Tea primarily relies on in-person branding, establishing a compelling digital learning experience becomes crucial for cultivating and sustaining customer trust. This approach not only enhances the brand's connection with customers but also encourages repeat engagement. Incorporating vibrant lifestyle imagery adds a personal touch, making Honest Tea products more relatable to a diverse audience."
+          ]
         }
       },
     ]

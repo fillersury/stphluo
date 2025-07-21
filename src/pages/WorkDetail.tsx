@@ -12,6 +12,7 @@ import MultipleImageFullSection from "../components/projectSections/MultipleImag
 import ComplexLeftTextImageListSection from "../components/projectSections/ComplexLeftTextImageListSection";
 import NotFound from "./NotFound";
 import WorkShowcase from "../components/WorkShowcase";
+import SimpleListSection from "../components/projectSections/SimpleListSection";
 
 const WorkDetail = () => {
   const { projectName } = useParams<{ projectName: string }>();
@@ -45,6 +46,8 @@ const WorkDetail = () => {
                 return <ComplexLeftTextImageListSection key={idx} {...section.data} />;
             case "workShowcase":
                 return <WorkShowcase key={idx} {...section.data} />;
+            case "simpleListSection":
+                return <SimpleListSection key={idx} {...section.data} />;
             default:
                 return null;
             }
