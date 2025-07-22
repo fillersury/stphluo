@@ -26,7 +26,7 @@ function Portfolio({ onNavigate }: PortfolioProps) {
           <div className="p-16 sm:p-20">
             <h1 className="text-xl sm:text-6xl font-sans text-gray-600 font-semibold mb-4 text-center">
               Hi! I'm Stephanie,<br /> and I'm{" "}
-              <span className="text-red-300 ">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}<span className="text-red-300">designer</span>.
+              <span className="text-red-300 ">{typed}</span><span className="inline-block w-[1px] h-5 text-red-300 animate-blink">|</span>{" "}<span className="text-red-300">designer.</span>
             </h1>
           </div>
         </div>
@@ -80,7 +80,7 @@ function Portfolio({ onNavigate }: PortfolioProps) {
         <WorkShowcase
           image={myeyedr}
           category="UX Research"
-          title="MyEyedr"
+          title="MyEyeDr"
           description="As a UX researcher, I conducted thorough UX research proposals on customer experience. I hosted UX workshops, and conducted research presentations."
           onButtonClick={() => onNavigate("projects/myeyedr")}
         />

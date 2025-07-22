@@ -34,6 +34,12 @@ import obsidian2 from "../assets/obsidian2.avif";
 
 import myeyedrLogo from "../assets/myeyedrLogo.avif";
 import myeyedrUR from "../assets/myeyedrUR.avif";
+import myeyedrUR1 from "../assets/myeyedrUR1.avif";
+import myeyedrUR2 from "../assets/myeyedrUR2.avif";
+import myeyedrUR3 from "../assets/myeyedrUR3.avif";
+import myeyedrUR4 from "../assets/myeyedrUR4.avif";
+import myeyedrUR5 from "../assets/myeyedrUR5.avif";
+import myeyedrUR6 from "../assets/myeyedrUR6.png";
 
 export type SectionType = 
   | "simpleTitle"
@@ -48,7 +54,10 @@ export type SectionType =
   | "multipleImageFullSection"
   | "complexLeftTextImageListSection"
   | "workShowcase"
-  | "simpleListSection";
+  | "simpleListSection"
+  | "complexDataFullSection"
+  | "simpleLeftBulletImageSection"
+  | "simpleImageSection";
 
 export interface SectionData {
   type: SectionType;
@@ -88,8 +97,9 @@ const projectData: Record<string, Project> = {
           textColor: "text-red-600",
           subHeader: "Product, Native Mobile UI",
           header: "01 Native SFMA Mobile Design System",
-          description:
+          descriptions: [
             "I created and maintained native mobile components, and aimed to ensure a cohesive and consistent user experience across all sections of SFMA (State Farm Mobile Application), including insurance landing page, claims, document center, and FAQs. I used user-centric design principles, added, removed, updated and improved upon components, illustrations, and icons.",
+          ],
           image: stateFarmDS,
         },
       },
@@ -376,6 +386,7 @@ const projectData: Record<string, Project> = {
         data: {
           textColor: "text-green-300",
           header: "Key Takeaways",
+          listType: "list-decimal list-inside",
           listItemTitles: [
             "Focus on consistency",
             "Follow industry standards",
@@ -452,7 +463,7 @@ const projectData: Record<string, Project> = {
       {
         type: "simpleTitle",
         data: {
-          title: "Obsidian",
+          title: "MyEyeDr",
           image: myeyedrLogo,
           textColor: "text-black",
           cardColor: "bg-sky-200",
@@ -481,6 +492,151 @@ const projectData: Record<string, Project> = {
           ],
           image: myeyedrUR
         }
+      },
+      {
+        type: "simpleFullSection",
+        data: {
+          textColor: "text-sky-300",
+          bgColor: "bg-white",
+          header: "Overview",
+          descriptions:
+          [
+            "Key considerations: The team was tasked with appealing to new generations of eye-care sales and services, by gathering user data and trends​.",
+            "As a user researcher at MyEyeDr, we conducted a campaign to get local DMV residents engaged in our digital eyewear campaigns. We targeting a sample size of 60 individuals who wore glasses/contacts."
+          ],
+        },
+      },
+      {
+        type: "simpleFullSection",
+        data: {
+          textColor: "text-sky-300",
+          bgColor: "bg-stone-100",
+          header: "The Challenge",
+          descriptions:
+          [
+            "Myeyedr wanted to expand its customer base by conducting research on families, and a younger generation of users."
+          ],
+        },
+      },
+      {
+        type: "complexDataFullSection",
+        data: {
+          textColor: "text-sky-300",
+          bgColor: "bg-stone-100",
+          header: "Define the Problem",
+          descriptions:
+          [
+            "Currently, myeyedr experiences and styles target a small demographic of users. As a company that is looking to expand outside of the D.C. area, we wanted to explore ways to appeal to our audience through UX research."
+          ],
+          data: [
+            {
+              title: "What influences your glasses selection?",
+              dataPoints: [
+                {
+                  category: "Trends",
+                  value: "65.5%"
+                },
+                {
+                  category: "Price",
+                  value: "15.8%"
+                },
+                {
+                  category: "Function",
+                  value: "5%"
+                },
+              ]
+            },
+            {
+              title: "Do you prefer glasses or contacts?",
+              dataPoints: [
+                {
+                  category: "Contacts",
+                  value: "32"
+                },
+                {
+                  category: "Glasses",
+                  value: "20"
+                },
+                {
+                  category: "Both",
+                  value: "8"
+                },
+              ]
+            },
+            {
+              title: "Key features being used on the website?",
+              dataPoints: [
+                {
+                  category: "Book eye exam appointment"
+                },
+                {
+                  category: "Frames & contacts"
+                },
+                {
+                  category: "Insurance providers"
+                },
+                {
+                  category: "Locations"
+                },
+                {
+                  category: "Eye Health Blog"
+                }
+              ]
+            }
+          ]
+        },
+      },
+      {
+        type: "simpleLeftBulletImageSection",
+        data: {
+          textColor: "text-stone-600",
+          header: "'How Might We' statements",
+          description: "",
+          bullets: [
+            "How might we create fresh, relatable content that appeals to a younger audience?",
+            "How might we strategize a more modern brand?",
+            "How might we understand the influences of young millennials and generation z?",
+            "How might we build a more genuine brand?",
+            "How might we utilize social media to our advantage?"
+          ],
+          image: myeyedrUR1,
+        },
+      },
+      {
+        type: "simpleImageSection",
+        data: {
+          textColor: "text-stone-600",
+          subHeader: "",
+          header: "UX Workshop to identify pain points",
+          descriptions: [],
+          images: [ myeyedrUR2, myeyedrUR3, myeyedrUR4, myeyedrUR5 ]
+        },
+      },
+      {
+        type: "simpleListSection",
+        data: {
+          textColor: "text-stone-600",
+          header: "Workshop Analysis",
+          description: "We were able to identify the following four categories within the finding generated from workshop & HMW statements.",
+          listType: "list-disc pl-5",
+          listItemTitles: [],
+          listItems: [
+            "Navigation",
+            "Personable Imagery",
+            "Content Strategy",
+            "Strategy and Planning"
+          ]
+        }
+      },
+      {
+        type: "simpleImageSection",
+        data: {
+          textColor: "text-stone-600",
+          subHeader: "",
+          header: "Results Matrix",
+          descriptions: [ "Evaluating the feasibility of each of our painpoints helped us pinpoint a starting point to reach our goal." ],
+          images: [myeyedrUR6],
+        },
       },
     ]
   }

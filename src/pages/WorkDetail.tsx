@@ -13,6 +13,9 @@ import ComplexLeftTextImageListSection from "../components/projectSections/Compl
 import NotFound from "./NotFound";
 import WorkShowcase from "../components/WorkShowcase";
 import SimpleListSection from "../components/projectSections/SimpleListSection";
+import ComplexDataFullSection from "../components/projectSections/ComplexDataFullSection";
+import SimpleLeftBulletImageSection from "../components/projectSections/SimpleLeftBulletImageSection";
+import SimpleImageSection from "../components/projectSections/SimpleImageSection";
 
 const WorkDetail = () => {
   const { projectName } = useParams<{ projectName: string }>();
@@ -48,6 +51,12 @@ const WorkDetail = () => {
                 return <WorkShowcase key={idx} {...section.data} />;
             case "simpleListSection":
                 return <SimpleListSection key={idx} {...section.data} />;
+            case "complexDataFullSection":
+                return <ComplexDataFullSection key={idx} {...section.data} />;
+            case "simpleLeftBulletImageSection":
+                return <SimpleLeftBulletImageSection key={idx} {...section.data} />;
+            case "simpleImageSection":
+                return <SimpleImageSection key={idx} {...section.data} />;
             default:
                 return null;
             }
