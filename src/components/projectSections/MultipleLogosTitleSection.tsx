@@ -44,7 +44,7 @@ const SimpleTitleSection = ({
                         </div>
                     ))}
                 </div>
-                <div className={`grid grid-cols-1 md:grid-cols-4 gap-10 py-6 px-10 md:px-16 w-full bg-white rounded-3xl ${cardColor}`}>
+                <div className={`grid grid-cols-1 md:grid-cols-4 gap-10 py-6 px-10 md:px-16 w-full rounded-3xl ${cardColor}`}>
                     <div>
                         <h1 className={`text-lg md:text-xl font-bold ${textColor} mb-2 md:mb-4`}>Timeline</h1>
                         <p className="text-sm md:text-base font-normal mb-2 md:mb-4">🕗 {timeline_dates}</p>

@@ -146,6 +146,7 @@ const projectData: Record<string, Project> = {
         data: {
           logos: [gapLogo, bananaRepublicLogo, oldNavyLogo, athletaLogo],
           title: "Gap",
+          cardColor: "bg-white",
           title_bg_color: "linear-gradient(90deg, #E3EEFF 2%, #FFEFD0 100%)",
           textColor: "text-blue-900",
           timeline_dates: "Jan 2024 - Jun 2024",
