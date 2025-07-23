@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import './index.css';
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );
