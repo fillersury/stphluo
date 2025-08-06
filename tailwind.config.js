@@ -7,6 +7,14 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        blink: "blink 1s step-start infinite",
+      },
+      keyframes: {
+        blink: {
+          "50%": { opacity: "0" },
+        },
+      },
       transformOrigin: {
         'center': 'center',
       },

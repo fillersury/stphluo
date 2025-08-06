@@ -5,12 +5,13 @@ interface SimpleLeftTextSectionData {
     paragraphs: string[];
     image: string;
     textColor: string;
+    bgColor: string;
 }
 
-const SimpleLeftTextSection = ({ header, paragraphs, image, textColor }: SimpleLeftTextSectionData) => {
+const SimpleLeftTextSection = ({ header, paragraphs, image, textColor, bgColor }: SimpleLeftTextSectionData) => {
 
     return (
-        <section className="bg-stone-100">
+        <section className={`${bgColor}`}>
             <div className="max-w-5xl mx-auto py-10 md:py-16 px-10">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-10 w-full min-h-[400px]">
                     <div className="md:col-span-2 flex flex-col justify-end md:h-full">

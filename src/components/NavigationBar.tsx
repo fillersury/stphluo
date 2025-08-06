@@ -32,8 +32,6 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
         return 'bg-stone-100';
       case 'projects/state-farm':
         return 'bg-orange-50';
-      case 'resume':
-        return 'bg-blue-100';
       default:
         return 'bg-white';
     }

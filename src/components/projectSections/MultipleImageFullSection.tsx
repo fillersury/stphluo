@@ -7,12 +7,12 @@ interface MultipleImageFullSectionData {
     bullets: string[];
     images: string[];
     textColor: string;
-    backgroundColor: string;
+    bgColor: string;
 }
 
-const MultipleImageFullSection = ({ category, header, description, images, bullets, textColor, backgroundColor }: MultipleImageFullSectionData) => {
+const MultipleImageFullSection = ({ category, header, description, images, bullets, textColor, bgColor }: MultipleImageFullSectionData) => {
     return (
-        <section className={`${backgroundColor}`}>
+        <section className={`${bgColor}`}>
             <div className="max-w-5xl mx-auto flex flex-col items-left py-16 px-10 lg:px-0">
                 {images.map((image, idx) => (
                     <div key={idx} className="w-full py-5">

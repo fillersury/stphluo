@@ -5,12 +5,12 @@ interface SimpleRightTextSectionData {
     paragraphs: string[];
     image: string;
     textColor: string;
-    backgroundColor: string;
+    bgColor: string;
 }
 
-const SimpleRightTextSection = ({ header, paragraphs, image, textColor, backgroundColor }: SimpleRightTextSectionData) => {
+const SimpleRightTextSection = ({ header, paragraphs, image, textColor, bgColor }: SimpleRightTextSectionData) => {
     return (
-        <section className={backgroundColor}>
+        <section className={bgColor}>
             <div className="max-w-5xl mx-auto py-10 md:py-16 px-10">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-10 w-full">
                     <div className="col-span-3 flex items-end h-full">
