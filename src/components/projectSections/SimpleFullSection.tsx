@@ -28,7 +28,11 @@ const SimpleFullSection = ({
                     </p>
                 ))}
                 {image && (
-                    <img src={image} alt={header} className="w-full py-6 md:py-10" />
+                    <img
+                        src={image}
+                        alt={header}
+                        className="py-6 md:py-10 h-auto max-w-full"
+                    />
                 )}
             </div>
         </section>
