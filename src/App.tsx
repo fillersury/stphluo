@@ -9,6 +9,7 @@ import './index.css';
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import CaseStudies from "./pages/CaseStudies";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -44,7 +45,10 @@ function AppContent() {
             <Route path="/portfolio" element={<Portfolio onNavigate={handleNavigate} />} />
             <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/projects/:projectName/:caseName" element={<WorkDetail />} />
             <Route path="/projects/:projectName" element={<WorkDetail />} />
+            <Route path="/case-studies" element={<CaseStudies onNavigate={handleNavigate}/>} />
+            <Route path="/case-studies/:projectName" element={<WorkDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
