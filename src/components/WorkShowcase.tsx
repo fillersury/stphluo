@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface WorkShowcaseProps {
   image: string;
@@ -18,12 +18,15 @@ const WorkShowcase: React.FC<WorkShowcaseProps> = ({
   buttonText = "View work →",
   onButtonClick,
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0 });
+
   return (
     <motion.section
+      ref={ref}
       initial={{ opacity: 0, x: -200 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.05 }} // only triggers once when 20% visible
     >
       <section className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -31,7 +34,8 @@ const WorkShowcase: React.FC<WorkShowcaseProps> = ({
             <img
               className="rounded-2xl transition-transform duration-300 ease-in-out hover:scale-105 max-w-full h-auto object-contain"
               src={image}
-              alt={title} />
+              alt={title}
+            />
           </div>
           <div className="flex flex-col justify-end p-10 pt-0 sm:p-16">
             <h3 className="text-base font-sans text-gray-600 font-medium mb-1">
