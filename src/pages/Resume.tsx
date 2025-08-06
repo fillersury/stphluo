@@ -165,7 +165,7 @@ function Resume() {
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
-            <h3 className="text-base md:text-lg text-stone-600">Bachelor of Science, Industrial Design + Human Computer Interaction</h3>
+            <h3 className="text-xs md:text-sm lg:text-base text-stone-600">Bachelor of Science, Industrial Design + Human Computer Interaction</h3>
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
               Virginia Tech (Virginia Polytechnic and State University)<br/>
               August 2015 - May 2019
