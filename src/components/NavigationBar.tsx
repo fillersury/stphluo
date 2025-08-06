@@ -117,8 +117,8 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
               onClick={() => handleNavigation(item.path)}
               className={`text-lg font-medium text-left transition-colors duration-200 ${
                 currentPage === item.path
-                  ? 'text-sky-600'
-                  : 'text-gray-700 hover:text-sky-600'
+                  ? 'text-red-300'
+                  : 'text-gray-700 hover:text-gray-400'
               }`}
             >
               {item.name}
