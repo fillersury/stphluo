@@ -71,10 +71,10 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-sky-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-300"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -105,7 +105,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
           <div className="flex justify-end">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-700 hover:text-sky-600"
+              className="text-gray-700 hover:text-gray-400"
             >
               <X className="h-6 w-6" />
             </button>
@@ -117,8 +117,8 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ currentPage, onNavigate }
               onClick={() => handleNavigation(item.path)}
               className={`text-lg font-medium text-left transition-colors duration-200 ${
                 currentPage === item.path
-                  ? 'text-sky-600'
-                  : 'text-gray-700 hover:text-sky-600'
+                  ? 'text-red-300'
+                  : 'text-gray-700 hover:text-gray-400'
               }`}
             >
               {item.name}
