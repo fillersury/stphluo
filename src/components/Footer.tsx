@@ -18,7 +18,6 @@ function Footer() {
         </a>
         <p className="text-xs sm:text-sm font-light text-stone-700">
           Designed by Stephanie Luo<br />
-          Developed by Annie Luo<br />
           © 2025
         </p>
       </div>
