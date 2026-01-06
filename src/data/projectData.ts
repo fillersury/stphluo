@@ -190,7 +190,7 @@ const projectData: Record<string, Project> = {
         data: {
           textColor: "text-red-600",
           subHeader: "Product, Native Mobile UI",
-          header: "aevia slide ",
+          header: "Native SFMA Mobile Design System",
           descriptions: [
             "I created and maintained native mobile components, and aimed to ensure a cohesive and consistent user experience across all sections of SFMA (State Farm Mobile Application), including insurance landing page, claims, document center, and FAQs. I used user-centric design principles, added, removed, updated and improved upon components, illustrations, and icons.",
           ],
@@ -201,7 +201,7 @@ const projectData: Record<string, Project> = {
         type: "simpleLeftTextSection",
         data: {
           textColor: "text-red-600",
-          header: "02 Claims Reimagined",
+          header: "Claims Reimagined",
           paragraphs: [
             "As claims routing questions increased in our work for claims, we worked on a long-term solution that could replace our current 'automated' claims chatbot.",
             "Research: I started with competitive analysis of how other companies were handling their claims.",
@@ -225,7 +225,7 @@ const projectData: Record<string, Project> = {
         type: "simpleLeftTextSection",
         data: {
           textColor: "text-red-600",
-          header: "04 Final Design + Prototype",
+          header: "Final Design + Prototype",
           paragraphs: [
             "The final claims experience was approved by business, after bringing the claims reimagined prototype to business presentations and finalizing business requirements.",
           ],
@@ -234,81 +234,6 @@ const projectData: Record<string, Project> = {
         },
       },
     ],
-  },
-  "gap": {
-    sections: [
-      {
-        type: "multipleLogosTitleSection",
-        data: {
-          logos: [gapLogo, bananaRepublicLogo, oldNavyLogo, athletaLogo],
-          title: "Gap",
-          cardColor: "bg-white",
-          title_bg_color: "linear-gradient(90deg, #E3EEFF 2%, #FFEFD0 100%)",
-          textColor: "text-blue-900",
-          timeline_dates: "Jan 2024 - Jun 2024",
-          timeline_text:
-            "All proofs of concept, prototypes and designs were created for use by Gap Inc.",
-          role_text:
-            "As a Senior UI Designer, I worked on the Gap Franchise Design System, and designedInternal franchise web modules for internal users.",
-          projects: [
-            "Franchise Design System (Web UI)",
-            "Franchise Internal Modules",
-          ],
-          tools: [ "Figma, Figjam, Mural, Jira, Confluence, Sharepoint" ],
-        },
-      },
-      {
-        type: "complexFullSection",
-        data: {
-          subHeader: "Product, Native Mobile/Desktop UI",
-          title: "Franchise Design System",
-          description: "I created and maintained components for the Franchise Gap design system, and aimed to ensure a cohesive and consistent user experience across all franchise modules. Using user-centric design principles, components added, removed, updated and improved upon.",
-          textColor: "text-blue-900",
-          header: "01 Native Web Components",
-          paragraphs: [
-            "I was integral in the creation and maintenance of the Franchise design system. These components, combined with ag-grid components, make up our Franchise web modules."
-          ],
-          image: gapUR,
-        },
-      },
-      {
-        type: "simpleLeftTextSection",
-        data: {
-          textColor: "text-blue-900",
-          header: "02 Color Usage",
-          paragraphs: [
-            "The color styles that we created for the Gap Franchise design system represent the brand, and affect text styles and components. I created visual documentation guides for color accessibility and usage to implement colors in all Franchise modules.",
-            "AccessibiIity: proposed and implemented higher contrast colors that elevated our color contrast standards to WCAG Level AA."
-          ],
-          image: gapBS,
-          bgColor: "bg-stone-100"
-        }
-      },
-      {
-        type: "simpleRightTextSection",
-        data: {
-          textColor: "text-blue-900",
-          header: "03 Typography",
-          paragraphs: [
-            "Our team of two created two typography categories for Franchise experiences. One style category for component experiences, and one style category for ag-grid tables.",
-            "The typescale is used across experiences, and are implemented on the front-end as H1 - H5, P1 - P5, among other text styles. Our typography documentation and usage ensures consistency across all franchise modules."
-          ],
-          image: gapComponents,
-        },
-      },
-      {
-        type: "simpleLeftTextSection",
-        data: {
-          textColor: "text-blue-900",
-          header: "04 Franchise Modules - Web UI",
-          paragraphs: [
-            "Our team also worked on Franchise modules to support all internal platforms that allow for order management and fulfillment, and facilitates all correspondence with Gap Inc third-party partners."
-          ],
-          image: gapConclusion,
-          bgColor: "bg-stone-100"
-        }
-      },
-    ]
   },
   "geico": {
     sections: [
@@ -362,7 +287,7 @@ const projectData: Record<string, Project> = {
       {
         type: "complexFullSection",
         data: {
-          title: "02 Brand Styles",
+          title: "Brand Styles",
           description: "The foundation for the GEICO Design System is composed of core elements representing the brand, including colors, text styles, voice, and tone. I created visual documentation guides for Color Accessibility, Typography, and Icon Usage. To implement brand styles in Figma, I used my existing documentation to variables and tokens in Figma.",
           textColor: "text-blue-900",
           header: "Accessibility",
@@ -380,7 +305,7 @@ const projectData: Record<string, Project> = {
         data: {
           textColor: "text-blue-900",
           bgColor: "bg-stone-100",
-          header: "03 Native Mobile Components",
+          header: "Native Mobile Components",
           paragraphs: [
             "After creating style documentation, I created the following components: image selection cards, card selections, buttons, checkboxes, progress indicator, a shopping bar experience, address auto complete, and planning for migrating our design system to React."
           ],
@@ -406,6 +331,81 @@ const projectData: Record<string, Project> = {
             "All of our experiences are available in dark mode-high contrast mode, which is documented in Figma and our live design system website."
           ],
           image: geicoComponents2
+        }
+      },
+    ]
+  },
+  "gap": {
+    sections: [
+      {
+        type: "multipleLogosTitleSection",
+        data: {
+          logos: [gapLogo, bananaRepublicLogo, oldNavyLogo, athletaLogo],
+          title: "Gap",
+          cardColor: "bg-white",
+          title_bg_color: "linear-gradient(90deg, #E3EEFF 2%, #FFEFD0 100%)",
+          textColor: "text-blue-900",
+          timeline_dates: "Jan 2024 - Jun 2024",
+          timeline_text:
+            "All proofs of concept, prototypes and designs were created for use by Gap Inc.",
+          role_text:
+            "As a Senior UI Designer, I worked on the Gap Franchise Design System, and designedInternal franchise web modules for internal users.",
+          projects: [
+            "Franchise Design System (Web UI)",
+            "Franchise Internal Modules",
+          ],
+          tools: [ "Figma, Figjam, Mural, Jira, Confluence, Sharepoint" ],
+        },
+      },
+      {
+        type: "complexFullSection",
+        data: {
+          subHeader: "Product, Native Mobile/Desktop UI",
+          title: "Franchise Design System",
+          description: "I created and maintained components for the Franchise Gap design system, and aimed to ensure a cohesive and consistent user experience across all franchise modules. Using user-centric design principles, components added, removed, updated and improved upon.",
+          textColor: "text-blue-900",
+          header: "Native Web Components",
+          paragraphs: [
+            "I was integral in the creation and maintenance of the Franchise design system. These components, combined with ag-grid components, make up our Franchise web modules."
+          ],
+          image: gapUR,
+        },
+      },
+      {
+        type: "simpleLeftTextSection",
+        data: {
+          textColor: "text-blue-900",
+          header: "Color Usage",
+          paragraphs: [
+            "The color styles that we created for the Gap Franchise design system represent the brand, and affect text styles and components. I created visual documentation guides for color accessibility and usage to implement colors in all Franchise modules.",
+            "AccessibiIity: proposed and implemented higher contrast colors that elevated our color contrast standards to WCAG Level AA."
+          ],
+          image: gapBS,
+          bgColor: "bg-stone-100"
+        }
+      },
+      {
+        type: "simpleRightTextSection",
+        data: {
+          textColor: "text-blue-900",
+          header: "Typography",
+          paragraphs: [
+            "Our team of two created two typography categories for Franchise experiences. One style category for component experiences, and one style category for ag-grid tables.",
+            "The typescale is used across experiences, and are implemented on the front-end as H1 - H5, P1 - P5, among other text styles. Our typography documentation and usage ensures consistency across all franchise modules."
+          ],
+          image: gapComponents,
+        },
+      },
+      {
+        type: "simpleLeftTextSection",
+        data: {
+          textColor: "text-blue-900",
+          header: "Franchise Modules - Web UI",
+          paragraphs: [
+            "Our team also worked on Franchise modules to support all internal platforms that allow for order management and fulfillment, and facilitates all correspondence with Gap Inc third-party partners."
+          ],
+          image: gapConclusion,
+          bgColor: "bg-stone-100"
         }
       },
     ]
@@ -587,7 +587,7 @@ const projectData: Record<string, Project> = {
             data: {
               textColor: "text-red-700",
               bgColor: "bg-stone-100",
-              header: "01 Kickoff",
+              header: "Kickoff",
               descriptions:
               [
                 "Key considerations: Our complete redesign and methods had to seamlessly incorporate already existing brand guidelines.",
@@ -600,7 +600,7 @@ const projectData: Record<string, Project> = {
             type: "simpleRightTextSection",
             data: {
               textColor: "text-red-700",
-              header: "02 Project Management",
+              header: "Project Management",
               paragraphs: [
                 "Our scrum meetings with stakeholders determined the business requirements that my team had to fulfill. I created our project management flowchart on Trello to guide our team through completing tasks."
               ],
@@ -613,7 +613,7 @@ const projectData: Record<string, Project> = {
             data: {
               textColor: "text-red-700",
               subHeader: "",
-              header: "03 Design System Refinement",
+              header: "Design System Refinement",
               descriptions: [ "To refine and develop the Obsidian brand, we used existing color schemes and logos to ideate on brand styles and typography." ],
               images: [ obsidianGlobalDP1, obsidianGlobalDP2, obsidianGlobalDP3 ],
               bgColor: "bg-stone-100"
@@ -624,7 +624,7 @@ const projectData: Record<string, Project> = {
             data: {
               textColor: "text-red-700",
               bgColor: "bg-white",
-              header: "04 Design Process",
+              header: "Design Process",
               descriptions:
               [
                 "After translating business requirements from stakeholders & project management, we started the creative process. I dove into project inspiration, the discovery of fresh new ways to present already existing information, and industry trends. I used existing color schemes and logos to ideate site maps, and wireframe work."
@@ -668,7 +668,7 @@ const projectData: Record<string, Project> = {
             type: "complexGridImageSection",
             data: {
               textColor: "text-red-700",
-              header: "05 Proposed Design",
+              header: "Proposed Design",
               descriptions: [ "After executing the UI design for the new Obsidian website via wireframes, I created high-fidelity Prototypes using the XD prototyping software to create a fully-functioning mock website. This gave stakeholders the ability to test user experience and provide feedback to ensure a user-friendly interface." ],
               images: [ obsidianGlobalDP7, obsidianGlobalDP8, obsidianGlobalDP9, obsidianGlobalDP10, obsidianGlobalDP11, obsidianGlobalDP12, obsidianGlobalDP13, obsidianGlobalDP14, obsidianGlobalDP15, obsidianGlobalDP16, obsidianGlobalDP17, obsidianGlobalDP18, obsidianGlobalDP19 ],
               bgColor: "bg-stone-100"
@@ -677,7 +677,7 @@ const projectData: Record<string, Project> = {
           {
             type: "simpleRightTextSection",
             data: {
-              header: "06 Design Audit",
+              header: "Design Audit",
               textColor: "text-red-700",
               paragraphs: [
                 "In order to obtain the CMMI Dev/3 2.0 certification, the site was externally audited to meet the certification requirements. It was also audited internally for content flaws and usability errors."
@@ -699,7 +699,7 @@ const projectData: Record<string, Project> = {
             type: "simpleFullSection",
             data: {
               textColor: "text-red-700",
-              header: "07 Conclusion",
+              header: "Conclusion",
               descriptions: [
                 "This project allowed me to step into a role where I was able to get comfortable leading a team of developers and designers to fulfill the design goals. Working on this project put every design and leadership skill I possess.",
                 "Success Criteria:  Using the agile development process, and meeting with stakeholders/clients every 2 weeks was necessary for me to accomplish the final product.",
@@ -749,7 +749,7 @@ const projectData: Record<string, Project> = {
             data: {
               textColor: "text-cyan-500",
               bgColor: "bg-stone-100",
-              header: "01 Kickoff",
+              header: "Kickoff",
               descriptions:
               [
                 "Key considerations: Our brand build involved creating from the ground up and creating a new design system and brand guidelines.",
@@ -762,7 +762,7 @@ const projectData: Record<string, Project> = {
             type: "simpleRightTextSection",
             data: {
               textColor: "text-cyan-500",
-              header: "02 Project Management",
+              header: "Project Management",
               paragraphs: [
                 "Our scrum meetings with stakeholders determined the business requirements that our joint team had to fulfill. I created a Jira dashboard to guide our team through completing tasks."
               ],
@@ -775,7 +775,7 @@ const projectData: Record<string, Project> = {
             data: {
               textColor: "text-cyan-500",
               bgColor: "bg-white",
-              header: "03 Design Process",
+              header: "Design Process",
               descriptions:
               [
                 "After translating business requirements from stakeholders & project management, we started the creative process. I dove into project inspiration, the discovery phase, and researching market trends. We collaborated to create color schemes, a logo, site maps, and wireframe work."
@@ -830,7 +830,7 @@ const projectData: Record<string, Project> = {
             type: "complexGridImageSection",
             data: {
               textColor: "text-cyan-500",
-              header: "04 Final Design",
+              header: "Final Design",
               descriptions: [ "After executing the UI design for the Cirrus website via wireframes, I created high-fidelity Prototypes using the XD prototyping software to create a fully-functioning mock website. This gave stakeholders the ability to test user experience and provide feedback to ensure a user-friendly interface." ],
               images: [ cirrusFD1, cirrusFD2, cirrusFD3, cirrusFD4, cirrusFD5, cirrusFD6, cirrusFD7, cirrusFD8 ],
               bgColor: "bg-stone-100"
@@ -849,7 +849,7 @@ const projectData: Record<string, Project> = {
             type: "simpleFullSection",
             data: {
               textColor: "text-cyan-500",
-              header: "06 Conclusion",
+              header: "Conclusion",
               descriptions: [
                 "This project allowed me to step into a role where I was able to get comfortable leading a team of developers and designers to fulfill the design goals. Working on this project put every design and leadership skill I possess to work.",
                 "Success Criteria:  Using the agile development process, and meeting with stakeholders/clients every 2 weeks was necessary for me to accomplish the final product.",

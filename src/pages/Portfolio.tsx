@@ -40,15 +40,6 @@ function Portfolio({ onNavigate }: PortfolioProps) {
           onButtonClick={() => onNavigate("projects/state-farm")}
         />
       </section>
-      <section className="bg-stone-100">
-        <WorkShowcase
-          image={gap}
-          category="Design Systems, Internal-facing UI, User Research"
-          title="Gap Inc"
-          description="Created and maintained the Gap Inc Design System, and designed internal franchise modules for Gap order management and fulfillment."
-          onButtonClick={() => onNavigate("projects/gap")}
-        />
-      </section>
       <section>
         <WorkShowcase
           image={geico}
@@ -56,6 +47,15 @@ function Portfolio({ onNavigate }: PortfolioProps) {
           title="GEICO"
           description="Ensured the cohesiveness of the GEICO design system delivery process. Designed internal applications to support top priority insurance initiatives to stay competitive in the industry."
           onButtonClick={() => onNavigate("projects/geico")}
+        />
+      </section>
+      <section className="bg-stone-100">
+        <WorkShowcase
+          image={gap}
+          category="Design Systems, Internal-facing UI, User Research"
+          title="Gap Inc"
+          description="Created and maintained the Gap Inc Design System, and designed internal franchise modules for Gap order management and fulfillment."
+          onButtonClick={() => onNavigate("projects/gap")}
         />
       </section>
       <section className="bg-stone-100">
