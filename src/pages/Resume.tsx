@@ -52,103 +52,115 @@ function Resume() {
             </div>
           </div>
           <div className="cols-span-1 sm:col-span-5 my-2 lg:my-4">
-            <h2 className="text-base md:text-lg lg:text-2xl font-semibold text-stone-600">Design + Work Experience</h2>
+            <h2 className="text-base md:text-lg lg:text-2xl font-semibold text-stone-600">Design Experience</h2>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base font-semibold text-stone-600">
-              Senior UI/UX Designer<br/>
+              Senior Product Designer<br/>
               State Farm - Synergis, Remote<br/>
               Jan 2024 - Present
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
-            <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              Created mobile experiences for SFMA (State Farm Mobile App), built components, and created custom illustrations for use in the SFMA mobile design system. Reimagined the claims chatbot experience and conducted enterprise research tests on designs to back up design decisions with stakeholders.
+            <p className=" text-xs md:text-sm lg:text-base text-stone-600">
+              Designed mobile experiences for the State Farm mobile app and claims, focusing on user-centered design and accessibility to meet user needs.
+              Pitched and completed a State Farm claims experience redesign, to improve the user experience with filing claims.
+              Created and maintained components for the State Farm AI chatbot design system, and the mobile design system.
+              Completed a redesign for the mobile illustration library for visual consistency and clarity.
+              Collaborated with stakeholders, product managers, researchers, and other designers to solve complex design problems.
+              Mentored and onboarded new associate designers, and led peer review sessions to foster a collaborative team environment.
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base font-semibold text-stone-600">
               Senior Product Designer<br/>
               GEICO, Remote<br/>
-              Jan 2022- Dec 2023
+              May 2022- Jan 2024
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              <i>Design system</i>: Established a new enterprise design system and created and maintained components and documentation for all GEICO experiences. Hosted design review board and UI huddles as a senior team member to help review and critique designs brought by associate designers, to correct component implementation and user experience.
-            </p>
-          </div>
-          <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4"></div>
-          <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
-            <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              <i>Internal application</i>: Created a new internal system involved in rating and underwriting that allows GEICO to be nimble at adjusting rates.
+              <i>Mobile and Web UI</i>: Created an intuitive experience portal for external insurance vendors to sell GEICO products, utilizing user-centered design strategies and a continuous feedback loop with users.
+              Collaborated cross-functionally with business and engineering teams to create a new agent portal that allows insurance vendors to sell internal insurance products.
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4"></div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              <i>Customer-facing application</i>: Designed a new agent facing portal to allow external insurance vendors to sell GEICO products. Developed prototypes to support user experience testing, and meticulously crafted design testing plans for conducting moderated user interviews.
+              <i>Design System</i>: Successfully established a new enterprise design system, and created components and documentation to standardize and improve consistency across all GEICO experiences, specifically in internal platforms, sales, and claims experiences.
+              Ensured the scalability, adaptability, and enduring impact of the design system to enhance its value for the organization.
+              Led design review board and UI huddles to ensure consistency across component implementation and user experience. 
+              Collaborated with the front-end team to implement components and styles in weekly releases, ensuring fluid cross-functional collaboration.
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base font-semibold text-stone-600">
-              UI/UX Designer<br/>
-              GAP Inc - Obsidian Global, Remote<br/>
-              Nov 2019 - Jun 2021
+              Senior Product Designer<br/>
+              GAP Inc - Obsidian Global, Washington D.C.<br/>
+              Nov 2019 - May 2022
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              Created wireframes for native desktop applications servicing internal-facing users, merchants, and GAP partners to facilitate merchandise sales, order management and fulfillment. Developed the design system for internal use, and pioneered best practices with business and development partners for consistency throughout all internal applications.
+              Designed intuitive user interfaces for existing and new franchise platforms : order management, fulfillment, assortment, and pricing, and enhanced the user experience.
+              Collaborated with cross-functional teams, including product managers, developers, and other designers to create cohesive and effective design solutions that align with business objectives.
+              Updated and maintained the Franchise design system, ensuring consistency across all digital platforms and adherence to brand guidelines.
+              Created detailed design specifications and annotations for accurate implementation by development teams.
+              Stayed current with industry trends + best practices, integrating concepts into ongoing projects.
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base font-semibold text-stone-600">
               UX Researcher<br/>
-              Coca-Cola - JBC Connect, Bethesda MD<br/>
+              The Coca-Cola Company - JBCField, Washington D.C.<br/>
               Mar 2019 - Nov 2019
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              Conducted user experience (UX) research and implemented strategic initiatives, instrumental in generating valuable insights aimed at connecting with the core consumer of Honest Tea. Formulated user personas and designed well-structured moderated interview plans to assess and enhance the overall user experience.
+              Conducted user experience (UX ) research and implemented strategic initiatives, vital in generating valuable insights aimed at connecting with the core user
+              Formulated user personas and designed well-structured moderated interview plans to assess and enhance the overall user experience.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-5 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 border-b-2">
           <div className="cols-span-1 sm:col-span-5 my-2 lg:my-4">
-            <h2 className="text-base md:text-lg lg:text-2xl font-semibold text-stone-600">Design Tools + Skills</h2>
+            <h2 className="text-base md:text-lg lg:text-2xl font-semibold text-stone-600">Tools + Skills</h2>
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <h3 className="text-base md:text-lg font-semibold italic text-stone-600">Tools</h3>
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
               Figma<br/>
-              Figjam<br/>
               Mural<br/>
-              Jira, Gitlab<br/>
-              UserTesting<br/>
+              InVision<br/>
+              Sketch<br/>
               Axure RP<br/>
               XD<br/>
               Indesign<br/>
               Illustrator<br/>
               Photoshop<br/>
-              After Effects, Premiere<br/>
-              Google Analytics
+              After Effects<br/>
+              Premiere<br/>
+              Google Analytics<br/>
+              UserTesting<br/>
+              Jira<br/>
+              Gitlab
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
             <h3 className="text-base md:text-lg font-semibold italic text-stone-600">Design skills</h3>
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              Creating + maintaining design systems<br/>
-              Accessibility: Web Content Accessibility Guidelines (WCAG), World Wide Web Consortium (W3G)<br/>
+              Design Systems<br/>
+              Web Content Accessibility(WCAG)<br/>
+              World Wide Web Consortium(W3G)<br/>
               Typography + Color<br/>
-              Mobile UI<br/>
-              Web UI<br/>
-              ios and Android design<br/>
-              Usability testing<br/>
-              Rapid prototypeing<br/>
-              Interface design<br/>
-              Information architecture
+              Mobile + Web UI<br/>
+              iOS + Android<br/>
+              Usability Testing<br/>
+              User Research<br/>
+              Rapid Prototyping<br/>
+              Interface Design<br/>
+              Information Architecture
             </p>
           </div>
         </div>
@@ -158,10 +170,9 @@ function Resume() {
           </div>
           <div className="cols-span-1 sm:col-span-2 my-2 lg:my-4">
             <p className="text-xs md:text-sm lg:text-base text-stone-600">
-              UX Certified - LI Learning 2023<br/>
-              CX Certified - LI Learning 2023<br/>
-              Software Programming Fundamentals<br/>
-              (HTML, CSS, JS) - LI Learning 2024
+              UX Certified LI Learning, 2023<br/>
+              CX Certified LI Learning, 2023<br/>
+              HTML, CSS, JS Certified LI Learning, 2023
             </p>
           </div>
           <div className="cols-span-1 sm:col-span-3 my-2 lg:my-4">
