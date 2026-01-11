@@ -1,6 +1,6 @@
 import React from "react";
 
-import profilePic from "../assets/profilepic.avif"
+import profilePic from "../assets/profilePic.jpeg"
 
 function About() {
 
