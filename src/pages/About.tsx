@@ -1,6 +1,6 @@
 import React from "react";
 
-import profilePic from "../assets/profilepic.avif"
+import profilePic from "../assets/profilePic.jpeg"
 
 function About() {
 
@@ -12,12 +12,11 @@ function About() {
             src={profilePic}
           />
         </div>
-        <div className="col-span-1 lg:col-span-3 mr-0 lg:mr-48">
-          <p className="text-stone-600 text-sm mb-4"><b>My name is Stephanie</b>, and I' am a UI/UX Designer, Design System Designer, and Industrial Designer.'</p>
-          <p className="text-stone-600 text-sm mb-4">I have always had an affinity for making all things beautiful, and that has since translated into a love for solving problems in unique and unconventional ways.</p>
-          <p className="text-stone-600 text-sm mb-4">I've worked at Gap Inc, Geico, State Farm, MyEyeDr, Coca-Cola, and contracting firms providing UI/UX design services. I've also freelanced work out to local, family-owned businesses in the DC area, including salon suites, catering companies, and local restaurants. I have a Bachelor of Science degree from Virginia Tech in Industrial Design.</p>
-          <p className="text-stone-600 text-sm mb-4">I have a pet Shiba Inu named Tachi, and I currently reside in NYC. I am also a boba tea and anime fan ☻.</p>
-          <p className="text-stone-600 text-sm mb-4">Connect with me on LinkedIn or reach out via email!</p>
+        <div className="col-span-1 lg:col-span-3 mr-0 lg:mr-48 p-10">
+          <p className="text-stone-600 text-sm mb-4"><b>Hello! I’m Stephanie, a dynamic product UI/UX designer</b> with 7+ years of experience delivering intuitive mobile and web experiences for enterprise clients including State Farm, GEICO, Gap Inc, and the Coca-Cola company. I specialize in user-centered design, robust design systems, and rapid prototyping using Figma.</p>
+          <p className="text-stone-600 text-sm mb-4">I excel in collaborating with cross-functional teams to enhance usability and drive end-to-end product solutions.</p>
+          <p className="text-stone-600 text-sm mb-4">I have a pet Shiba Inu named Tachi, and I currently reside in NYC.</p>
+          <p className="text-stone-600 text-sm mb-4">Connect with me on LinkedIn or reach out via email.</p>
         </div>
       </div>
     </div>
