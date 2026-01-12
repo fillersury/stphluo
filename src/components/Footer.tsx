@@ -6,7 +6,7 @@ function Footer() {
     <footer className="flex justify-center m-5 sm:m-10">
       <div className="text-center">
         <a
-          href="https://www.linkedin.com/in/stephanie-l-43966b135/"
+          href="https://www.linkedin.com/in/stephanie-luo-43966b135"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block"
