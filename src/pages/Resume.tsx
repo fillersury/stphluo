@@ -19,7 +19,7 @@ function Resume() {
                 Download pdf
               </a>
               <a
-                href="https://www.linkedin.com/in/stephanie-l-43966b135/" // replace with your actual LinkedIn URL
+                href="https://www.linkedin.com/in/stephanie-luo-43966b135" // replace with your actual LinkedIn URL
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 text-xs text-stone-700 underline"
@@ -42,7 +42,7 @@ function Resume() {
                 Download pdf
               </a>
               <a
-                href="https://www.linkedin.com/in/stephanie-l-43966b135/" // replace with your actual LinkedIn URL
+                href="https://www.linkedin.com/in/stephanie-luo-43966b135" // replace with your actual LinkedIn URL
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 text-sm text-stone-700 underline"
