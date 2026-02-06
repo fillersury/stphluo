@@ -1,8 +1,24 @@
-import stateFarm from "../assets/stateFarmLogo.svg";
-import stateFarmDS from "../assets/stateFarmDS.avif";
-import stateFarmBS from "../assets/stateFarmBS.avif";
-import stateFarmComponents from "../assets/stateFarmComponents.avif";
-import stateFarmConclusion from "../assets/stateFarmConclusion.avif";
+import sLuoPortfolio2 from "../assets/SLuo-Portfolio-2026-images-2.jpg";
+import sLuoPortfolio3 from "../assets/SLuo-Portfolio-2026-images-3.jpg";
+import sLuoPortfolio4 from "../assets/SLuo-Portfolio-2026-images-4.jpg";
+import sLuoPortfolio5 from "../assets/SLuo-Portfolio-2026-images-5.jpg";
+import sLuoPortfolio6 from "../assets/SLuo-Portfolio-2026-images-6.jpg";
+import sLuoPortfolio7 from "../assets/SLuo-Portfolio-2026-images-7.jpg";
+import sLuoPortfolio8 from "../assets/SLuo-Portfolio-2026-images-8.jpg";
+import sLuoPortfolio9 from "../assets/SLuo-Portfolio-2026-images-9.jpg";
+import sLuoPortfolio10 from "../assets/SLuo-Portfolio-2026-images-10.jpg";
+import sLuoPortfolio11 from "../assets/SLuo-Portfolio-2026-images-11.jpg";
+import sLuoPortfolio12 from "../assets/SLuo-Portfolio-2026-images-12.jpg";
+import sLuoPortfolio13 from "../assets/SLuo-Portfolio-2026-images-13.jpg";
+import sLuoPortfolio14 from "../assets/SLuo-Portfolio-2026-images-14.jpg";
+import sLuoPortfolio15 from "../assets/SLuo-Portfolio-2026-images-15.jpg";
+import sLuoPortfolio16 from "../assets/SLuo-Portfolio-2026-images-16.jpg";
+import sLuoPortfolio17 from "../assets/SLuo-Portfolio-2026-images-17.jpg";
+import sLuoPortfolio18 from "../assets/SLuo-Portfolio-2026-images-18.jpg";
+import sLuoPortfolio19 from "../assets/SLuo-Portfolio-2026-images-19.jpg";
+import sLuoPortfolio20 from "../assets/SLuo-Portfolio-2026-images-20.jpg";
+import sLuoPortfolio21 from "../assets/SLuo-Portfolio-2026-images-21.jpg";
+import sLuoPortfolio22 from "../assets/SLuo-Portfolio-2026-images-22.jpg";
 
 import gapLogo from "../assets/gapLogo.avif";
 import bananaRepublicLogo from "../assets/bananaRepublicLogo.avif";
@@ -14,13 +30,6 @@ import gapUR from "../assets/gapUR.avif";
 import gapComponents from "../assets/gapComponents.avif";
 import gapConclusion from "../assets/gapConclusion.avif";
 
-import geicoLogo from "../assets/geicoLogo.svg";
-import geicoUR from "../assets/geicoUR.avif";
-import geicoUR2 from "../assets/geicoUR2.avif";
-import geicoUR3 from "../assets/geicoUR3.avif";
-import geicoBS from "../assets/geicoBS.avif";
-import geicoComponents from "../assets/geicoComponents.gif";
-import geicoComponents2 from "../assets/geicoComponents2.avif";
 
 import honestLogo from "../assets/honestLogo.png";
 import cokeLogo from "../assets/cokeLogo.png";
@@ -166,71 +175,73 @@ const projectData: Record<string, Project> = {
   "state-farm": {
     sections: [
       {
-        type: "simpleTitle",
+        type: "imageSlideSection",
         data: {
-          title: "State Farm",
-          title_bg_color: "bg-orange-50",
-          textColor: "text-red-600",
-          cardColor: "bg-white",
-          image: stateFarm,
-          timeline_dates: "Jun 2024 - Present",
-          timeline_text:
-            "All proofs of concept, prototypes and designs were created for use by State Farm.",
-          role_text:
-            "As a Senior UI Designer, I worked on SFMA (State Farm Mobile App), and built mobile components and experiences for claims and documents.",
-          projects: [
-            "State Farm Mobile App Native Design System",
-            "SFMA Claims and Document Center",
-          ],
-          tools: ["Figma, Mural, Gitlab, Sharepoint"],
+          header: "state farm slide 2",
+          image: sLuoPortfolio2,
         },
       },
       {
-        type: "simpleFullSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-red-600",
-          subHeader: "Product, Native Mobile UI",
-          header: "Native SFMA Mobile Design System",
-          descriptions: [
-            "I created and maintained native mobile components, and aimed to ensure a cohesive and consistent user experience across all sections of SFMA (State Farm Mobile Application), including insurance landing page, claims, document center, and FAQs. I used user-centric design principles, added, removed, updated and improved upon components, illustrations, and icons.",
-          ],
-          image: stateFarmDS,
+          header: "state farm slide 3",
+          image: sLuoPortfolio3,
         },
       },
       {
-        type: "simpleLeftTextSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-red-600",
-          header: "Claims Reimagined",
-          paragraphs: [
-            "As claims routing questions increased in our work for claims, we worked on a long-term solution that could replace our current 'automated' claims chatbot.",
-            "Research: I started with competitive analysis of how other companies were handling their claims.",
-          ],
-          image: stateFarmBS,
-          bgColor: "bg-stone-100"
+          header: "state farm slide 4",
+          image: sLuoPortfolio4,
         },
       },
       {
-        type: "simpleRightTextSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-red-600",
-          header: "Iterative Design Wireframing",
-          paragraphs: [
-            "The transformation from chatbot-based interactions to form-based submissions required careful planning, continuous refinement, and a deep understanding of the user's journey. The goal was to make the entire process intuitive, user-friendly, and efficient. Through the iterative design process, we ensured that both the visual design and functionality evolved progressively in alignment with user needs and business goals.",
-          ],
-          image: stateFarmComponents,
+          header: "state farm slide 5",
+          image: sLuoPortfolio5,
         },
       },
       {
-        type: "simpleLeftTextSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-red-600",
-          header: "Final Design + Prototype",
-          paragraphs: [
-            "The final claims experience was approved by business, after bringing the claims reimagined prototype to business presentations and finalizing business requirements.",
-          ],
-          image: stateFarmConclusion,
-          bgColor: "bg-stone-100"
+          header: "state farm slide 6",
+          image: sLuoPortfolio6,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "state farm slide 7",
+          image: sLuoPortfolio7,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "state farm slide 8",
+          image: sLuoPortfolio8,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "state farm slide 9",
+          image: sLuoPortfolio9,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "state farm slide 10",
+          image: sLuoPortfolio10,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "state farm slide 11",
+          image: sLuoPortfolio11,
         },
       },
     ],
@@ -238,100 +249,81 @@ const projectData: Record<string, Project> = {
   "geico": {
     sections: [
       {
-        type: "complexSingleLogoTitleSection",
+        type: "imageSlideSection",
         data: {
-          title: "Geico",
-          title_bg_color: "linear-gradient(90deg, #E3EEFF 2%, #FFEFD0 100%)",
-          textColor: "text-blue-900",
-          image: geicoLogo,
-          timeline_dates: "Jun 2021 - Dec 2023",
-          timeline_text:
-            "All proofs of concept, prototypes and designs were created for use by GEICO, Government Employees Insurance Company.",
-          role_text:
-            "As a Senior Product Designer, I worked on high-priority Enterprise GEICO Applications, and played an integral role in pioneering the GEICO Design System.",
-          projects: [
-            "B2B Application",
-            "GEICO Design System",
-            "Internal Application"
-          ],
-          tools: [
-            "Figma, Figjam, Mural, Azure DevOps, Indesign, Illustrator, Photoshop, Sharepoint, Outlook, Widen Collective",
-            "HTML, CSS, Javascript"
-          ],
+          header: "geico slide 12",
+          image: sLuoPortfolio12,
         },
       },
       {
-        type: "simpleTextImageOverlaySection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-blue-900",
-          subHeader: "Product, Native Mobile/Desktop UI",
-          header: "Design System",
-          description: "I aimed to stay true to the GEICO brand by being playful, vibrant, and engaging. From using colors with intention to user-friendly controls, Hue puts the user first, establishing a unified design language, and fostering consistency across different channels.",
-          image: geicoUR
-        }
-      },
-      {
-        type: "multipleImageFullSection",
-        data: {
-          textColor: "text-blue-900",
-          bgColor: "bg-stone-100",
-          category: "Competitive Analysis",
-          description: "To reimagine our existing web elements to create a GEICO product, we had to first dive deep into design systems as products in the tech-field. We found key advantages and disadvantages that we wanted to include in our initiatives.",
-          bullets: [
-            "Because users are introduced to clear and consistent design throughout products using a design system, it establishes easily recognizable patterns that allows users to move throughout the experience as intended",
-            "These design systems allowed tech companies to scale up their products, allowing companies like Apple and Google to build exponentially more products based around centralized design decisions"
-          ],
-          images: [geicoUR2, geicoUR3]
-        }
-      },
-      {
-        type: "complexFullSection",
-        data: {
-          title: "Brand Styles",
-          description: "The foundation for the GEICO Design System is composed of core elements representing the brand, including colors, text styles, voice, and tone. I created visual documentation guides for Color Accessibility, Typography, and Icon Usage. To implement brand styles in Figma, I used my existing documentation to variables and tokens in Figma.",
-          textColor: "text-blue-900",
-          header: "Accessibility",
-          paragraphs: [
-            "I proposed and introduced a high-contrast dark mode update that would elevate our color contrast standards to the WCAG (Web Content Accessibility Guidelines) Level AAA standard and ADA (American Disabillities Act) Title III standard.",
-            "Not only does it create a standard of inclusivity for those with visual impairments, it improves the overall user experience for all customers as well."
-          ],
-          image: geicoBS,
-          leftColSpan: 3,
-          rightColSpan: 2
+          header: "geico slide 13",
+          image: sLuoPortfolio13,
         },
       },
       {
-        type: "simpleRightTextSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-blue-900",
-          bgColor: "bg-stone-100",
-          header: "Native Mobile Components",
-          paragraphs: [
-            "After creating style documentation, I created the following components: image selection cards, card selections, buttons, checkboxes, progress indicator, a shopping bar experience, address auto complete, and planning for migrating our design system to React."
-          ],
-          image: geicoComponents,
+          header: "geico slide 14",
+          image: sLuoPortfolio14,
         },
       },
       {
-        type: "complexLeftTextImageListSection",
+        type: "imageSlideSection",
         data: {
-          textColor: "text-blue-900",
-          header: "Creating Components + Documentation",
-          paragraphs: [
-            "Design system components were created as Figma components with documentation pages for handoff, and also published on hue.geico.com as part of a weekly release."
-          ],
-          bulletTitles: [
-            "Visual Examples",
-            "Guidelines",
-            "Dark-Mode"
-          ],
-          bullets: [
-            "Component visuals contain mobile and desktop versions, and show designers how the component is used in the app.",
-            "Documented guidance for designer and developer usage and handoff are written here.",
-            "All of our experiences are available in dark mode-high contrast mode, which is documented in Figma and our live design system website."
-          ],
-          image: geicoComponents2
-        }
+          header: "geico slide 15",
+          image: sLuoPortfolio15,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 16",
+          image: sLuoPortfolio16,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 17",
+          image: sLuoPortfolio17,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 18",
+          image: sLuoPortfolio18,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 19",
+          image: sLuoPortfolio19,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 20",
+          image: sLuoPortfolio20,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 21",
+          image: sLuoPortfolio21,
+        },
+      },
+      {
+        type: "imageSlideSection",
+        data: {
+          header: "geico slide 22",
+          image: sLuoPortfolio22,
+        },
       },
     ]
   },
