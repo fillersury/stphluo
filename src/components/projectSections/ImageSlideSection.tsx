@@ -11,7 +11,7 @@ const ImageSlideSection = ({
     image,
 }: ImageSlideSectionData) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0 });
+    const isInView = useInView(ref, { once: true, amount: 0.35 });
     
     return (
         <motion.section
