@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import projectData, { SectionData } from "../data/projectData";
 import SimpleTitleSection from "../components/projectSections/SimpleTitleSection";
@@ -20,11 +21,86 @@ import SimpleCaptionImageSection from "../components/projectSections/simpleCapti
 import ComplexGridImageSection from "../components/projectSections/ComplexGridImageSection";
 import ImageSlideSection from "../components/projectSections/ImageSlideSection";
 
+const GEICO_PROJECT_KEY = "geico";
+const GEICO_ACCESS_STORAGE_KEY = "geico_access_granted";
+const GEICO_PASSWORD_HASH = import.meta.env.VITE_GEICO_PASSWORD_HASH;
+
+const toSha256 = async (value: string) => {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(value);
+    const digest = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(digest))
+        .map((byte) => byte.toString(16).padStart(2, "0"))
+        .join("");
+};
+
 const WorkDetail = () => {
     const { projectName, caseName } = useParams<{ projectName: string, caseName: string }>();
+    const [isAccessGranted, setIsAccessGranted] = useState(false);
+    const [isAccessCheckDone, setIsAccessCheckDone] = useState(false);
     const project = projectData[projectName ?? ""];
 
-    const sections = caseName ? project.cases?.[caseName].sections : null;
+    useEffect(() => {
+        let isCancelled = false;
+
+        const checkAccess = async () => {
+            if (projectName !== GEICO_PROJECT_KEY) {
+                if (!isCancelled) {
+                    setIsAccessGranted(true);
+                    setIsAccessCheckDone(true);
+                }
+                return;
+            }
+
+            const hasSessionAccess = sessionStorage.getItem(GEICO_ACCESS_STORAGE_KEY) === "true";
+            if (hasSessionAccess) {
+                if (!isCancelled) {
+                    setIsAccessGranted(true);
+                    setIsAccessCheckDone(true);
+                }
+                return;
+            }
+
+            const enteredPassword = window.prompt("Enter password to access this project:");
+            if (!enteredPassword) {
+                if (!isCancelled) {
+                    setIsAccessGranted(false);
+                    setIsAccessCheckDone(true);
+                }
+                return;
+            }
+
+            if (!GEICO_PASSWORD_HASH) {
+                if (!isCancelled) {
+                    setIsAccessGranted(false);
+                    setIsAccessCheckDone(true);
+                }
+                return;
+            }
+
+            const enteredHash = await toSha256(enteredPassword);
+            const isValid = enteredHash === GEICO_PASSWORD_HASH;
+
+            if (!isCancelled) {
+                if (isValid) {
+                    sessionStorage.setItem(GEICO_ACCESS_STORAGE_KEY, "true");
+                }
+
+                setIsAccessGranted(isValid);
+                setIsAccessCheckDone(true);
+            }
+        };
+
+        void checkAccess();
+        return () => {
+            isCancelled = true;
+        };
+    }, [projectName]);
+
+    const sections = caseName ? project?.cases?.[caseName]?.sections : null;
+
+    if (!isAccessCheckDone) return null;
+    if (!isAccessGranted) return <NotFound />;
 
     const returnSections = (sectionsList: SectionData[]) => {
         return (
