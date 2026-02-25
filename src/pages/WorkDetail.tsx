@@ -25,7 +25,7 @@ const GEICO_PROJECT_KEY = "geico";
 const GEICO_ACCESS_STORAGE_KEY = "geico_access_granted";
 const GEICO_PASSWORD_HASH = import.meta.env.VITE_GEICO_PASSWORD_HASH;
 
-const toSha256 = async (value: string) => {
+const toSha256 = async (value: string | undefined) => {
     const encoder = new TextEncoder();
     const data = encoder.encode(value);
     const digest = await crypto.subtle.digest("SHA-256", data);
@@ -35,7 +35,7 @@ const toSha256 = async (value: string) => {
 };
 
 const WorkDetail = () => {
-    const { projectName, caseName } = useParams<{ projectName: string, caseName: string }>();
+    const { projectName, caseName } = useParams();
     const [isAccessGranted, setIsAccessGranted] = useState(false);
     const [isAccessCheckDone, setIsAccessCheckDone] = useState(false);
     const project = projectData[projectName ?? ""];
@@ -44,46 +44,50 @@ const WorkDetail = () => {
         let isCancelled = false;
 
         const checkAccess = async () => {
+            console.log("Checking access for project:", projectName);
+
             if (projectName !== GEICO_PROJECT_KEY) {
-                if (!isCancelled) {
-                    setIsAccessGranted(true);
-                    setIsAccessCheckDone(true);
-                }
+                setIsAccessGranted(true);
+                setIsAccessCheckDone(true);
                 return;
             }
 
             const hasSessionAccess = sessionStorage.getItem(GEICO_ACCESS_STORAGE_KEY) === "true";
+            console.log("Session access:", hasSessionAccess);
+
             if (hasSessionAccess) {
-                if (!isCancelled) {
-                    setIsAccessGranted(true);
-                    setIsAccessCheckDone(true);
-                }
+                setIsAccessGranted(true);
+                setIsAccessCheckDone(true);
                 return;
             }
 
             const enteredPassword = window.prompt("Enter password to access this project:");
+            console.log("Entered password:", enteredPassword);
+
             if (!enteredPassword) {
-                if (!isCancelled) {
-                    setIsAccessGranted(false);
-                    setIsAccessCheckDone(true);
-                }
+                setIsAccessGranted(false);
+                setIsAccessCheckDone(true);
                 return;
             }
 
             if (!GEICO_PASSWORD_HASH) {
-                if (!isCancelled) {
-                    setIsAccessGranted(false);
-                    setIsAccessCheckDone(true);
-                }
+                console.error("No password hash available.");
+                setIsAccessGranted(false);
+                setIsAccessCheckDone(true);
                 return;
             }
 
             const enteredHash = await toSha256(enteredPassword);
+            console.log("Entered hash:", enteredHash);
+
             const isValid = enteredHash === GEICO_PASSWORD_HASH;
+            console.log("Is valid:", isValid);
 
             if (!isCancelled) {
                 if (isValid) {
                     sessionStorage.setItem(GEICO_ACCESS_STORAGE_KEY, "true");
+                } else {
+                    alert("Incorrect password. Please try again.");
                 }
 
                 setIsAccessGranted(isValid);
@@ -94,6 +98,7 @@ const WorkDetail = () => {
         const timeoutId = window.setTimeout(() => {
             void checkAccess();
         }, 0);
+        
         return () => {
             isCancelled = true;
             window.clearTimeout(timeoutId);
@@ -105,54 +110,33 @@ const WorkDetail = () => {
     if (!isAccessCheckDone) return null;
     if (!isAccessGranted) return <NotFound />;
 
-    const returnSections = (sectionsList: SectionData[]) => {
-        return (
-            <>
-                {sectionsList.map((section, idx) => {
-                    switch(section.type) {
-                    case "simpleTitle": 
-                        return <SimpleTitleSection key={idx} {...section.data} />;
-                    case "simpleFullSection":
-                        return <SimpleFullSection key={idx} {...section.data} />;
-                    case "simpleLeftTextSection":
-                        return <SimpleLeftTextSection key={idx} {...section.data} />;
-                    case "simpleRightTextSection":
-                        return <SimpleRightTextSection key={idx} {...section.data} />;
-                    case "multipleLogosTitleSection":
-                        return <MultipleLogosTitleSection key={idx} {...section.data} />;
-                    case "complexFullSection":
-                        return <ComplexFullSection key={idx} {...section.data} />;
-                    case "complexSingleLogoTitleSection":
-                        return <ComplexSingleLogoTitleSection key={idx} {...section.data} />;
-                    case "simpleTextImageOverlaySection":
-                        return <SimpleTextImageOverlaySection key={idx} {...section.data} />;
-                    case "multipleImageFullSection":
-                        return <MultipleImageFullSection key={idx} {...section.data} />;
-                    case "complexLeftTextImageListSection":
-                        return <ComplexLeftTextImageListSection key={idx} {...section.data} />;
-                    case "workShowcase":
-                        return <WorkShowcase key={idx} {...section.data} />;
-                    case "simpleListSection":
-                        return <SimpleListSection key={idx} {...section.data} />;
-                    case "complexDataFullSection":
-                        return <ComplexDataFullSection key={idx} {...section.data} />;
-                    case "simpleLeftBulletImageSection":
-                        return <SimpleLeftBulletImageSection key={idx} {...section.data} />;
-                    case "simpleImageSection":
-                        return <SimpleImageSection key={idx} {...section.data} />;
-                    case "simpleCaptionImageSection":
-                        return <SimpleCaptionImageSection key={idx} {...section.data} />;
-                    case "complexGridImageSection":
-                        return <ComplexGridImageSection key={idx} {...section.data} />;
-                    case "imageSlideSection":
-                        return <ImageSlideSection key={idx} {...section.data} />;
-                    default:
-                        return null;
-                    }
-                })}
-            </>
-        )
-    }
+    const returnSections = (sectionsList: any[]) => (
+        <>
+            {sectionsList.map((section, idx) => {
+                switch(section.type) {
+                    case "simpleTitle": return <SimpleTitleSection key={idx} {...section.data} />;
+                    case "simpleFullSection": return <SimpleFullSection key={idx} {...section.data} />;
+                    case "simpleLeftTextSection": return <SimpleLeftTextSection key={idx} {...section.data} />;
+                    case "simpleRightTextSection": return <SimpleRightTextSection key={idx} {...section.data} />;
+                    case "multipleLogosTitleSection": return <MultipleLogosTitleSection key={idx} {...section.data} />;
+                    case "complexFullSection": return <ComplexFullSection key={idx} {...section.data} />;
+                    case "complexSingleLogoTitleSection": return <ComplexSingleLogoTitleSection key={idx} {...section.data} />;
+                    case "simpleTextImageOverlaySection": return <SimpleTextImageOverlaySection key={idx} {...section.data} />;
+                    case "multipleImageFullSection": return <MultipleImageFullSection key={idx} {...section.data} />;
+                    case "complexLeftTextImageListSection": return <ComplexLeftTextImageListSection key={idx} {...section.data} />;
+                    case "workShowcase": return <WorkShowcase key={idx} {...section.data} />;
+                    case "simpleListSection": return <SimpleListSection key={idx} {...section.data} />;
+                    case "complexDataFullSection": return <ComplexDataFullSection key={idx} {...section.data} />;
+                    case "simpleLeftBulletImageSection": return <SimpleLeftBulletImageSection key={idx} {...section.data} />;
+                    case "simpleImageSection": return <SimpleImageSection key={idx} {...section.data} />;
+                    case "simpleCaptionImageSection": return <SimpleCaptionImageSection key={idx} {...section.data} />;
+                    case "complexGridImageSection": return <ComplexGridImageSection key={idx} {...section.data} />;
+                    case "imageSlideSection": return <ImageSlideSection key={idx} {...section.data} />;
+                    default: return null;
+                }
+            })}
+        </>
+    );
 
     if (project && !sections) return returnSections(project.sections);
     if (project && sections) return returnSections(sections);
