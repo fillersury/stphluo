@@ -91,9 +91,12 @@ const WorkDetail = () => {
             }
         };
 
-        void checkAccess();
+        const timeoutId = window.setTimeout(() => {
+            void checkAccess();
+        }, 0);
         return () => {
             isCancelled = true;
+            window.clearTimeout(timeoutId);
         };
     }, [projectName]);
 
