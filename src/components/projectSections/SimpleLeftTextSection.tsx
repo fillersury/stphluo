@@ -29,6 +29,8 @@ const SimpleLeftTextSection = ({ header, paragraphs, image, textColor, bgColor }
                             src={image}
                             alt={header}
                             className="w-full"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>

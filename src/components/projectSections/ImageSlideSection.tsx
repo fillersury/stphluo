@@ -26,6 +26,8 @@ const ImageSlideSection = ({
                         src={image}
                         alt={header}
                         className="py-6 md:py-10 h-auto max-w-full"
+                        loading="lazy"
+                        decoding="async"
                     />
                 )}
             </div>

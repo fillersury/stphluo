@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { ComponentType, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import projectData, { SectionData } from "../data/projectData";
+import projectData, { SectionData, SectionType } from "../data/projectData";
 import SimpleTitleSection from "../components/projectSections/SimpleTitleSection";
 import SimpleFullSection from "../components/projectSections/SimpleFullSection";
 import SimpleLeftTextSection from "../components/projectSections/SimpleLeftTextSection";
@@ -24,6 +24,29 @@ import ImageSlideSection from "../components/projectSections/ImageSlideSection";
 const GEICO_PROJECT_KEY = "geico";
 const GEICO_ACCESS_STORAGE_KEY = "geico_access_granted";
 const GEICO_PASSWORD_HASH = import.meta.env.VITE_GEICO_PASSWORD_HASH;
+const SLIDE_BATCH_SIZE = 4;
+
+const sectionComponents: Record<SectionType, ComponentType<any>> = {
+    simpleTitle: SimpleTitleSection,
+    simpleFullSection: SimpleFullSection,
+    simpleLeftTextSection: SimpleLeftTextSection,
+    simpleRightTextSection: SimpleRightTextSection,
+    multipleLogosTitleSection: MultipleLogosTitleSection,
+    complexFullSection: ComplexFullSection,
+    complexSingleLogoTitleSection: ComplexSingleLogoTitleSection,
+    simpleTextImageOverlaySection: SimpleTextImageOverlaySection,
+    multipleImageFullSection: MultipleImageFullSection,
+    complexLeftTextImageListSection: ComplexLeftTextImageListSection,
+    workShowcase: WorkShowcase,
+    simpleListSection: SimpleListSection,
+    complexDataFullSection: ComplexDataFullSection,
+    simpleLeftBulletImageSection: SimpleLeftBulletImageSection,
+    simpleImageSection: SimpleImageSection,
+    simpleCaptionImageSection: SimpleCaptionImageSection,
+    complexGridImageSection: ComplexGridImageSection,
+    imageSlideSection: ImageSlideSection,
+    conclusion: SimpleFullSection,
+};
 
 const toSha256 = async (value: string | undefined) => {
     const encoder = new TextEncoder();
@@ -38,14 +61,28 @@ const WorkDetail = () => {
     const { projectName, caseName } = useParams();
     const [isAccessGranted, setIsAccessGranted] = useState(false);
     const [isAccessCheckDone, setIsAccessCheckDone] = useState(false);
+    const [visibleSectionCount, setVisibleSectionCount] = useState(SLIDE_BATCH_SIZE);
     const project = projectData[projectName ?? ""];
+    const sections = useMemo(
+        () => (caseName ? project?.cases?.[caseName]?.sections : project?.sections) ?? null,
+        [caseName, project]
+    );
+    const isSlideDeckProject = useMemo(
+        () => Boolean(sections?.length) && sections!.every((section) => section.type === "imageSlideSection"),
+        [sections]
+    );
+    const visibleSections = useMemo(() => {
+        if (!sections) {
+            return null;
+        }
+
+        return isSlideDeckProject ? sections.slice(0, visibleSectionCount) : sections;
+    }, [isSlideDeckProject, sections, visibleSectionCount]);
 
     useEffect(() => {
         let isCancelled = false;
 
         const checkAccess = async () => {
-            console.log("Checking access for project:", projectName);
-
             if (projectName !== GEICO_PROJECT_KEY) {
                 setIsAccessGranted(true);
                 setIsAccessCheckDone(true);
@@ -53,7 +90,6 @@ const WorkDetail = () => {
             }
 
             const hasSessionAccess = sessionStorage.getItem(GEICO_ACCESS_STORAGE_KEY) === "true";
-            console.log("Session access:", hasSessionAccess);
 
             if (hasSessionAccess) {
                 setIsAccessGranted(true);
@@ -62,7 +98,6 @@ const WorkDetail = () => {
             }
 
             const enteredPassword = window.prompt("Enter password to access this project:");
-            console.log("Entered password:", enteredPassword);
 
             if (!enteredPassword) {
                 setIsAccessGranted(false);
@@ -78,10 +113,7 @@ const WorkDetail = () => {
             }
 
             const enteredHash = await toSha256(enteredPassword);
-            console.log("Entered hash:", enteredHash);
-
             const isValid = enteredHash === GEICO_PASSWORD_HASH;
-            console.log("Is valid:", isValid);
 
             if (!isCancelled) {
                 if (isValid) {
@@ -95,52 +127,45 @@ const WorkDetail = () => {
             }
         };
 
-        const timeoutId = window.setTimeout(() => {
-            void checkAccess();
-        }, 0);
+        void checkAccess();
         
         return () => {
             isCancelled = true;
-            window.clearTimeout(timeoutId);
         };
     }, [projectName]);
 
-    const sections = caseName ? project?.cases?.[caseName]?.sections : null;
+    useEffect(() => {
+        setVisibleSectionCount(SLIDE_BATCH_SIZE);
+    }, [projectName, caseName]);
 
     if (!isAccessCheckDone) return null;
     if (!isAccessGranted) return <NotFound />;
+    if (!project || !visibleSections) return <NotFound />;
 
-    const returnSections = (sectionsList: any[]) => (
-        <>
-            {sectionsList.map((section, idx) => {
-                switch(section.type) {
-                    case "simpleTitle": return <SimpleTitleSection key={idx} {...section.data} />;
-                    case "simpleFullSection": return <SimpleFullSection key={idx} {...section.data} />;
-                    case "simpleLeftTextSection": return <SimpleLeftTextSection key={idx} {...section.data} />;
-                    case "simpleRightTextSection": return <SimpleRightTextSection key={idx} {...section.data} />;
-                    case "multipleLogosTitleSection": return <MultipleLogosTitleSection key={idx} {...section.data} />;
-                    case "complexFullSection": return <ComplexFullSection key={idx} {...section.data} />;
-                    case "complexSingleLogoTitleSection": return <ComplexSingleLogoTitleSection key={idx} {...section.data} />;
-                    case "simpleTextImageOverlaySection": return <SimpleTextImageOverlaySection key={idx} {...section.data} />;
-                    case "multipleImageFullSection": return <MultipleImageFullSection key={idx} {...section.data} />;
-                    case "complexLeftTextImageListSection": return <ComplexLeftTextImageListSection key={idx} {...section.data} />;
-                    case "workShowcase": return <WorkShowcase key={idx} {...section.data} />;
-                    case "simpleListSection": return <SimpleListSection key={idx} {...section.data} />;
-                    case "complexDataFullSection": return <ComplexDataFullSection key={idx} {...section.data} />;
-                    case "simpleLeftBulletImageSection": return <SimpleLeftBulletImageSection key={idx} {...section.data} />;
-                    case "simpleImageSection": return <SimpleImageSection key={idx} {...section.data} />;
-                    case "simpleCaptionImageSection": return <SimpleCaptionImageSection key={idx} {...section.data} />;
-                    case "complexGridImageSection": return <ComplexGridImageSection key={idx} {...section.data} />;
-                    case "imageSlideSection": return <ImageSlideSection key={idx} {...section.data} />;
-                    default: return null;
+    return (
+        <div>
+            {visibleSections.map((section: SectionData, idx) => {
+                const SectionComponent = sectionComponents[section.type];
+
+                if (!SectionComponent) {
+                    return null;
                 }
-            })}
-        </>
-    );
 
-    if (project && !sections) return returnSections(project.sections);
-    if (project && sections) return returnSections(sections);
-    return <NotFound />;
+                return <SectionComponent key={`${section.type}-${idx}`} {...section.data} />;
+            })}
+            {isSlideDeckProject && sections && visibleSectionCount < sections.length ? (
+                <div className="mx-auto flex max-w-5xl justify-center px-6 py-8">
+                    <button
+                        type="button"
+                        onClick={() => setVisibleSectionCount((current) => current + SLIDE_BATCH_SIZE)}
+                        className="rounded-3xl bg-stone-800 px-8 py-3 text-white transition-colors hover:bg-stone-700"
+                    >
+                        Load more slides
+                    </button>
+                </div>
+            ) : null}
+        </div>
+    );
 };
 
 export default WorkDetail;

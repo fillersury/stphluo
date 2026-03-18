@@ -30,9 +30,11 @@ const ComplexGridImageSection = ({
                     {images.map((image, idx) => (
                         <div key={idx} className="w-full py-1">
                             <img
-                            src={image}
-                            alt={`${header} logo ${idx + 1}`}
-                            className="mx-auto"
+                                src={image}
+                                alt={`${header} logo ${idx + 1}`}
+                                className="mx-auto"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
                     ))}
