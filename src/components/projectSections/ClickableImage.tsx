@@ -17,6 +17,8 @@ const ClickableImage = ({
                     src={image}
                     alt={header}
                     className="w-full transition duration-300 ease-in-out"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-300 rounded" />
                 </a>

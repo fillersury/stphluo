@@ -16,7 +16,12 @@ const MultipleImageFullSection = ({ category, header, description, images, bulle
             <div className="max-w-5xl mx-auto flex flex-col items-left py-16 px-10 lg:px-0">
                 {images.map((image, idx) => (
                     <div key={idx} className="w-full py-5">
-                        <img src={image} alt={`${header} logo ${idx + 1}`} />
+                        <img
+                            src={image}
+                            alt={`${header} logo ${idx + 1}`}
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
                 ))}
 

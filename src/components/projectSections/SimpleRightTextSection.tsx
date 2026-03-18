@@ -18,6 +18,8 @@ const SimpleRightTextSection = ({ header, paragraphs, image, textColor, bgColor 
                             src={image}
                             alt={header}
                             className="w-full"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div className="col-span-2 flex flex-col items-start md:items-end justify-end h-full text-left md:text-right">

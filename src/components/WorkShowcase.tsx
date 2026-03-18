@@ -35,6 +35,8 @@ const WorkShowcase: React.FC<WorkShowcaseProps> = ({
               className="rounded-2xl transition-transform duration-300 ease-in-out hover:scale-105 max-w-full h-auto object-contain"
               src={image}
               alt={title}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="flex flex-col justify-end p-10 pt-0 sm:p-16">
